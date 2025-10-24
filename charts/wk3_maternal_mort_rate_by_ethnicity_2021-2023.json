@@ -1,0 +1,90 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "color": {"field": "Ethnicity", "legend": null, "type": "nominal"},
+        "tooltip": [
+          {"field": "Ethnicity", "type": "nominal"},
+          {
+            "field": "Rate",
+            "format": ".1f",
+            "title": "Rate",
+            "type": "quantitative"
+          },
+          {
+            "field": "RR_vs_White",
+            "format": ".2f",
+            "title": "Risk ratio vs White",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "field": "Rate",
+          "scale": {"zero": true},
+          "title": "Maternal Deaths per 100,000",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Ethnicity",
+          "sort": "-x",
+          "title": null,
+          "type": "nominal"
+        }
+      },
+      "title": "Rate Of Maternal Mortality By Ethnicity — 2021-23"
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 3},
+      "encoding": {
+        "text": {"field": "Rate", "format": ".1f", "type": "quantitative"},
+        "x": {"field": "Rate", "type": "quantitative"},
+        "y": {"field": "Ethnicity", "sort": "-x", "type": "nominal"}
+      }
+    }
+  ],
+  "data": {"name": "data-1f4393add45a8e374e69b14c85fc3db3"},
+  "height": 320,
+  "width": 640,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-1f4393add45a8e374e69b14c85fc3db3": [
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "White",
+        "Rate": 12.44,
+        "RR_vs_White": 1
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Black",
+        "Rate": 28.21,
+        "RR_vs_White": 2.2676848874598075
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Asian",
+        "Rate": 16.74,
+        "RR_vs_White": 1.3456591639871383
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 5.59,
+        "RR_vs_White": 0.44935691318327975
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Mixed",
+        "Rate": 22.45,
+        "RR_vs_White": 1.804662379421222
+      }
+    ]
+  }
+}

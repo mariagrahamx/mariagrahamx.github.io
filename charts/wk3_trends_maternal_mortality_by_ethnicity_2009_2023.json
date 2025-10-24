@@ -1,0 +1,438 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "vconcat": [
+    {
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "color": {
+          "field": "Ethnicity",
+          "title": "Ethnicity",
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": {"param": "param_3", "value": 1},
+          "value": 0.25
+        },
+        "tooltip": [
+          {"field": "Years", "type": "nominal"},
+          {"field": "Ethnicity", "type": "nominal"},
+          {"field": "Rate", "format": ".1f", "type": "quantitative"}
+        ],
+        "x": {
+          "axis": {"format": "d"},
+          "field": "Mid-Year",
+          "title": "Mid-Year Of Rolling Period",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Rate",
+          "title": "Maternal Deaths Per 100,000",
+          "type": "quantitative"
+        }
+      },
+      "height": 360,
+      "name": "view_3",
+      "title": "Trends In Maternal Mortality By Ethnicity (UK, 2009–2023)",
+      "width": 640
+    }
+  ],
+  "data": {"name": "data-3931a08ff51c064dd7c4080e8c4b6713"},
+  "params": [
+    {
+      "name": "param_3",
+      "select": {"type": "point", "fields": ["Ethnicity"]},
+      "bind": "legend",
+      "views": ["view_3"]
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-3931a08ff51c064dd7c4080e8c4b6713": [
+      {
+        "Years": "2009-11",
+        "Mid-Year": 2010,
+        "Ethnicity": "White",
+        "Rate": 9.46
+      },
+      {"Years": "2010-12", "Mid-Year": 2011, "Ethnicity": "White", "Rate": 9},
+      {
+        "Years": "2011-13",
+        "Mid-Year": 2012,
+        "Ethnicity": "White",
+        "Rate": 7.98
+      },
+      {
+        "Years": "2012-14",
+        "Mid-Year": 2013,
+        "Ethnicity": "White",
+        "Rate": 7.42
+      },
+      {
+        "Years": "2013-15",
+        "Mid-Year": 2014,
+        "Ethnicity": "White",
+        "Rate": 6.58
+      },
+      {
+        "Years": "2014-16",
+        "Mid-Year": 2015,
+        "Ethnicity": "White",
+        "Rate": 8.04
+      },
+      {
+        "Years": "2015-17",
+        "Mid-Year": 2016,
+        "Ethnicity": "White",
+        "Rate": 7.22
+      },
+      {
+        "Years": "2016-18",
+        "Mid-Year": 2017,
+        "Ethnicity": "White",
+        "Rate": 7.87
+      },
+      {
+        "Years": "2017-19",
+        "Mid-Year": 2018,
+        "Ethnicity": "White",
+        "Rate": 7.04
+      },
+      {
+        "Years": "2018-20",
+        "Mid-Year": 2019,
+        "Ethnicity": "White",
+        "Rate": 9.23
+      },
+      {
+        "Years": "2019-21",
+        "Mid-Year": 2020,
+        "Ethnicity": "White",
+        "Rate": 9.68
+      },
+      {
+        "Years": "2020-22",
+        "Mid-Year": 2021,
+        "Ethnicity": "White",
+        "Rate": 12.23
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "White",
+        "Rate": 12.44
+      },
+      {
+        "Years": "2009-11",
+        "Mid-Year": 2010,
+        "Ethnicity": "Black",
+        "Rate": 24.5
+      },
+      {
+        "Years": "2010-12",
+        "Mid-Year": 2011,
+        "Ethnicity": "Black",
+        "Rate": 27.29
+      },
+      {
+        "Years": "2011-13",
+        "Mid-Year": 2012,
+        "Ethnicity": "Black",
+        "Rate": 26.52
+      },
+      {
+        "Years": "2012-14",
+        "Mid-Year": 2013,
+        "Ethnicity": "Black",
+        "Rate": 31.13
+      },
+      {
+        "Years": "2013-15",
+        "Mid-Year": 2014,
+        "Ethnicity": "Black",
+        "Rate": 28.17
+      },
+      {
+        "Years": "2014-16",
+        "Mid-Year": 2015,
+        "Ethnicity": "Black",
+        "Rate": 39.66
+      },
+      {
+        "Years": "2015-17",
+        "Mid-Year": 2016,
+        "Ethnicity": "Black",
+        "Rate": 38.03
+      },
+      {
+        "Years": "2016-18",
+        "Mid-Year": 2017,
+        "Ethnicity": "Black",
+        "Rate": 34.27
+      },
+      {
+        "Years": "2017-19",
+        "Mid-Year": 2018,
+        "Ethnicity": "Black",
+        "Rate": 31.61
+      },
+      {
+        "Years": "2018-20",
+        "Mid-Year": 2019,
+        "Ethnicity": "Black",
+        "Rate": 33.99
+      },
+      {
+        "Years": "2019-21",
+        "Mid-Year": 2020,
+        "Ethnicity": "Black",
+        "Rate": 37.19
+      },
+      {
+        "Years": "2020-22",
+        "Mid-Year": 2021,
+        "Ethnicity": "Black",
+        "Rate": 35.1
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Black",
+        "Rate": 28.21
+      },
+      {
+        "Years": "2009-11",
+        "Mid-Year": 2010,
+        "Ethnicity": "Asian",
+        "Rate": 19.5
+      },
+      {
+        "Years": "2010-12",
+        "Mid-Year": 2011,
+        "Ethnicity": "Asian",
+        "Rate": 18.53
+      },
+      {
+        "Years": "2011-13",
+        "Mid-Year": 2012,
+        "Ethnicity": "Asian",
+        "Rate": 18.4
+      },
+      {
+        "Years": "2012-14",
+        "Mid-Year": 2013,
+        "Ethnicity": "Asian",
+        "Rate": 10.1
+      },
+      {
+        "Years": "2013-15",
+        "Mid-Year": 2014,
+        "Ethnicity": "Asian",
+        "Rate": 10.79
+      },
+      {
+        "Years": "2014-16",
+        "Mid-Year": 2015,
+        "Ethnicity": "Asian",
+        "Rate": 14.52
+      },
+      {
+        "Years": "2015-17",
+        "Mid-Year": 2016,
+        "Ethnicity": "Asian",
+        "Rate": 12.74
+      },
+      {
+        "Years": "2016-18",
+        "Mid-Year": 2017,
+        "Ethnicity": "Asian",
+        "Rate": 14.65
+      },
+      {
+        "Years": "2017-19",
+        "Mid-Year": 2018,
+        "Ethnicity": "Asian",
+        "Rate": 11.74
+      },
+      {
+        "Years": "2018-20",
+        "Mid-Year": 2019,
+        "Ethnicity": "Asian",
+        "Rate": 16.12
+      },
+      {
+        "Years": "2019-21",
+        "Mid-Year": 2020,
+        "Ethnicity": "Asian",
+        "Rate": 17.61
+      },
+      {
+        "Years": "2020-22",
+        "Mid-Year": 2021,
+        "Ethnicity": "Asian",
+        "Rate": 20.16
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Asian",
+        "Rate": 16.74
+      },
+      {
+        "Years": "2009-11",
+        "Mid-Year": 2010,
+        "Ethnicity": "Chinese/Other",
+        "Rate": null
+      },
+      {
+        "Years": "2010-12",
+        "Mid-Year": 2011,
+        "Ethnicity": "Chinese/Other",
+        "Rate": null
+      },
+      {
+        "Years": "2011-13",
+        "Mid-Year": 2012,
+        "Ethnicity": "Chinese/Other",
+        "Rate": null
+      },
+      {
+        "Years": "2012-14",
+        "Mid-Year": 2013,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 4.11
+      },
+      {
+        "Years": "2013-15",
+        "Mid-Year": 2014,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 4.07
+      },
+      {
+        "Years": "2014-16",
+        "Mid-Year": 2015,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 5.32
+      },
+      {
+        "Years": "2015-17",
+        "Mid-Year": 2016,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 9.28
+      },
+      {
+        "Years": "2016-18",
+        "Mid-Year": 2017,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 7.97
+      },
+      {
+        "Years": "2017-19",
+        "Mid-Year": 2018,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 9.37
+      },
+      {
+        "Years": "2018-20",
+        "Mid-Year": 2019,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 8.22
+      },
+      {
+        "Years": "2019-21",
+        "Mid-Year": 2020,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 8.38
+      },
+      {
+        "Years": "2020-22",
+        "Mid-Year": 2021,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 8.44
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Chinese/Other",
+        "Rate": 5.59
+      },
+      {
+        "Years": "2009-11",
+        "Mid-Year": 2010,
+        "Ethnicity": "Mixed",
+        "Rate": null
+      },
+      {
+        "Years": "2010-12",
+        "Mid-Year": 2011,
+        "Ethnicity": "Mixed",
+        "Rate": null
+      },
+      {
+        "Years": "2011-13",
+        "Mid-Year": 2012,
+        "Ethnicity": "Mixed",
+        "Rate": null
+      },
+      {
+        "Years": "2012-14",
+        "Mid-Year": 2013,
+        "Ethnicity": "Mixed",
+        "Rate": 3.32
+      },
+      {
+        "Years": "2013-15",
+        "Mid-Year": 2014,
+        "Ethnicity": "Mixed",
+        "Rate": 9.92
+      },
+      {
+        "Years": "2014-16",
+        "Mid-Year": 2015,
+        "Ethnicity": "Mixed",
+        "Rate": 16.32
+      },
+      {
+        "Years": "2015-17",
+        "Mid-Year": 2016,
+        "Ethnicity": "Mixed",
+        "Rate": 22.51
+      },
+      {
+        "Years": "2016-18",
+        "Mid-Year": 2017,
+        "Ethnicity": "Mixed",
+        "Rate": 25.14
+      },
+      {
+        "Years": "2017-19",
+        "Mid-Year": 2018,
+        "Ethnicity": "Mixed",
+        "Rate": 15.41
+      },
+      {
+        "Years": "2018-20",
+        "Mid-Year": 2019,
+        "Ethnicity": "Mixed",
+        "Rate": 12.2
+      },
+      {
+        "Years": "2019-21",
+        "Mid-Year": 2020,
+        "Ethnicity": "Mixed",
+        "Rate": 8.67
+      },
+      {
+        "Years": "2020-22",
+        "Mid-Year": 2021,
+        "Ethnicity": "Mixed",
+        "Rate": 16.34
+      },
+      {
+        "Years": "2021-23",
+        "Mid-Year": 2022,
+        "Ethnicity": "Mixed",
+        "Rate": 22.45
+      }
+    ]
+  }
+}
