@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "A simple donut chart with embedded data.",
+  "data": {
+    "values": [
+      {"category": "Contributions", "value": 91},
+      {"category": "Other Third Party Services - Legal Entity", "value": 3.1},
+      {"category": "Consumable Materia", "value": 2.74},
+      {"category": "Labor Leasing", "value": 1.12},
+      {"category": "Aid", "value": 0.59},
+      {"category": "Others", "value": 0.85}
+    ]
+  },
+  "width": 350,
+  "height": 350,
+
+   "mark": {"type": "arc", "innerRadius": 90},
+  "title": {
+    "text": "SUBAREA: HOSPITAL AND OUTPATIENT CARE",
+    "color": "#2B5EB9",
+    "font": "vertical-align: inherit;",
+    "fontSize": 16,
+    "subtitle": "Representation of the 5 that receive the most resources.",
+    "subtitleColor": "#333333",
+    "subtitleFont": "vertical-align: inherit;",
+    "subtitleFontSize": 11
+  },
+
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#DD4477",
+          "#DD5280",
+          "#DF5E89",
+          "#E06D93",
+          "#E1799C",
+          "#E287A5"
+        ]
+      },
+      "legend": {"title": "", "orient": "bottom", "columns": 2},
+      "sort": null
+    }
+  },
+  "config": {}
+}

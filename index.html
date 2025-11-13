@@ -59,7 +59,7 @@
     <!-- Section 1 -->
     <section>
         <div class="chart-description">
-            <h2>Section 1: Week 1 </h2>
+            <h2>Week 1: Week 1 </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 Chart 1 shows the GDP per Capita over 30 years for China, DRC, India, Nigeria, UK & USA
             </p>
@@ -84,7 +84,7 @@
       <!-- Section 2 -->
     <section>
         <div class="chart-description">
-            <h2>Section 2: Week 2 </h2>
+            <h2>Week 2: Week 2 </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                Chart 4 shows the unemployment rate in Ethiopia over 30 years
             </p>
@@ -103,7 +103,7 @@
     <!-- Section 3 -->
     <section>
         <div class="chart-description">
-            <h2>Section 3: Week 3 </h2>
+            <h2>Week 3: Week 3 </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                Should the UK implement targeted maternal health programs for ethnic minority women?
             </p>
@@ -119,6 +119,24 @@
         </div>
     </section>
     
+    <!-- Section 3 -->
+    <section>
+        <div class="chart-description">
+            <h2>Week 4: Week 4 </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               Recreate a chart online 
+            </p>
+        </div>
+        <img src = "wk4_hw_image.png" alt ="" style ="width: 400px;">
+        <figure id="Location8"></figure>
+
+
+        <div class="chart-description">
+         <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               Summary .......
+            </p>
+        </div>
+    </section>
     
 
 
@@ -146,13 +164,16 @@
 
         let figure_7_spec = "charts/wk3_maternal_mort_rate_by_ethnicity_2021-2023.json";
 
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        vegaEmbed('#Location2', figure_2_spec)
-        vegaEmbed('#Location3', figure_3_spec)
+        let figure_8_spec = "charts/wk4_copy_of_chart_govbr.json";
+
+       // vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+       // vegaEmbed('#Location2', figure_2_spec)
+       // vegaEmbed('#Location3', figure_3_spec)
         vegaEmbed('#Location4', figure_4_spec)
         vegaEmbed('#Location5', figure_5_spec)
         vegaEmbed('#Location6', figure_6_spec)
         vegaEmbed('#Location7', figure_7_spec)
+        vegaEmbed('#Location8', figure_8_spec)
 
 
 
@@ -162,6 +183,34 @@
         // let figure_3_spec = ...
         // vegaEmbed('#Location3', figure_3_spec)
 
+        // define a variable list with all chart files
+
+        let chart_files = [
+            "charts/wk1_chart2.json",
+            "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-05-30-french-exchange/visualisation/fig2_goods-trade.json",
+            "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-07-04-tennis-time/visualisation/fig1_strawberry_prices.json"
+          ];
+                // must be done within the script tags
+        for(let i=0; i<3; i++) {
+            console.log(i)
+
+            console.log(chart_files[i])
+
+        }
+
+        let chart_ids = [
+            "#Location1",
+            "#Location2",
+            "#Location3"
+          ];
+
+          for (let i=0; i<3; i++) {
+            console.log(i)
+
+            console.log(chart_ids[i], chart_files[i])
+
+            vegaEmbed(chart_ids[i], chart_files[i]);
+          }
 
     </script>
 
