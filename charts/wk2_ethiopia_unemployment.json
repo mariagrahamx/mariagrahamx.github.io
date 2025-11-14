@@ -12,8 +12,8 @@
     "color": "#126cd3",
     "subtitleColor": "#616161"
   },
-  "height": 250,
-  "width": 300,
+  "height": 350,
+  "width": 400,
   "autosize": {"type": "fit", "contains": "padding"},
   "background": "#ffffff",
   "view": {"fill": "#ffffff", "strokeOpacity": 0},
