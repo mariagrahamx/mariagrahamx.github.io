@@ -52,44 +52,46 @@
             href="https://github.com/mariagrahamx">GitHub</a>
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page is Maria Graham's portfolio of charts. 
+        Hi! My name is Maria Graham. Welcome to my portfolio page for PP434 - Automated Data Visualisation for Policymaking.
     </h3>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
     <!-- Section 1 -->
     <section>
         <div class="chart-description">
-            <h2>Week 1: Week 1 </h2>
+            <h2> CC1: Hosting </h2>
+            <h3> Task: Set up your own Github account and live page using GitHub pages. Add two charts using the vegaEmbed function. </h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Chart 1 shows the GDP per Capita over 30 years for China, DRC, India, Nigeria, UK & USA
+                Chart 1 shows the GDP per Capita over 30 years across 6 different countries. This chart was added from Richard Davies' repository. 
             </p>
         </div>
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         
         <div class="chart-description">
         <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               Chart 2 shows the trade in goods in and out of France
+               Chart 2 shows the the top 10 goods exported to and imported from France. This chart was added from the web. 
             </p>
         </div>
         <figure id="Location2"></figure>
 
         <div class="chart-description">
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               Chart 3 shows the fluctuations in the price of strawberries over 4 years
+               Chart 3 shows fluctuations in the price of strawberries over 4 years in the UK. This chart was also added from the web. 
             </p>
         </div>
-        <figure id="Location3"></figure>
+        <figure id="Location3" style ="width:480px"></figure>
     </section>
 
       <!-- Section 2 -->
     <section>
         <div class="chart-description">
-            <h2>Week 2: Week 2 </h2>
+            <h2>CC2: Building</h2>
+            <h3> Task: Build two separtate charts using the "create" tool from the Economics Observatory Data Hub. Embed these two charts into your page using the vegaEmbed function. </h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                Chart 4 shows the unemployment rate in Ethiopia over 30 years
             </p>
         </div>
-        <figure id="Location4"></figure>
+        <figure id="Location4" style ="width:400px" ></figure>
 
         <div class="chart-description">
          <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
@@ -103,18 +105,26 @@
     <!-- Section 3 -->
     <section>
         <div class="chart-description">
-            <h2>Week 3: Week 3 </h2>
+            <h2>CC3: Debate </h2>
+            <h3> Task: Produce two charts that support or refute (or are related to in some way) to a topic of policy debate. </h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                Should the UK implement targeted maternal health programs for ethnic minority women?
             </p>
         </div>
         <figure id="Location6"></figure>
 
+        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               The first chart shows maternal mortality is persistently higher among Black, Asian, and Mixed ethnic groups than among White women in the UK. 
+            </p>
+
+
          <figure id="Location7"></figure>
 
         <div class="chart-description">
          <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               Summary .......
+               The second chart supports this pattern: even after adjusting for socioeconomic and gestational differences, babies of Pakistani and Black African mothers face a significantly higher risk of neonatal death compared to babies of White mothers.
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               Together, these two charts show clear ethnic inequalities in both maternal and neonatal health outcomes in the UK, suggesting that universal services alone may not be sufficient to address these disparities.
             </p>
         </div>
     </section>
@@ -122,17 +132,22 @@
     <!-- Section 3 -->
     <section>
         <div class="chart-description">
-            <h2>Week 4: Week 4 </h2>
+            <h2>CC4: Replication </h2>
+            <h3> Task: Find a chart that a policy organisation, a journalist, think tank, television channel or company has used. Replicate it, and then improve on it.</h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               Recreate a chart online 
+               I found this chart on the Brazilian Government's Transparency Portal website. It gives an overview of how spending is distributed within the Hospital and Outpatient Care sub-area.
             </p>
         </div>
         <img src = "wk4_hw_image.png" alt ="" style ="width: 400px;">
-        <figure id="Location8"></figure>
-
 
         <div class="chart-description">
-         <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+        <h3> My Replication: </h3>
+        <figure id="Location8"></figure>
+        
+         <h3> My Improvement: </h3>
+        <figure id= ></figure>
+    
+        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                Summary .......
             </p>
         </div>
@@ -160,9 +175,9 @@
 
         let figure_5_spec = "charts/wk2_ethiopia_displacement.json";
 
-        let figure_6_spec = "charts/wk3_trends_maternal_mortality_by_ethnicity_2009_2023.json";
+        let figure_6_spec = "charts/wk3_line_matmortality_ethnicity_uk.json";
 
-        let figure_7_spec = "charts/wk3_maternal_mort_rate_by_ethnicity_2021-2023.json";
+        let figure_7_spec = "charts/wk3_bar_neonatal_death_ethnicity_uk.json";
 
         let figure_8_spec = "charts/wk4_copy_of_chart_govbr.json";
 
