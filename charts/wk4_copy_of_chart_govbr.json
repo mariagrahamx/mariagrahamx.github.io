@@ -3,7 +3,7 @@
   "description": "A simple donut chart with embedded data.",
   "data": {
     "values": [
-      {"category": "Contributions", "value": 91},
+      {"category": "Contributions", "value": 91.6},
       {"category": "Other Third Party Services - Legal Entity", "value": 3.1},
       {"category": "Consumable Materia", "value": 2.74},
       {"category": "Labor Leasing", "value": 1.12},
@@ -11,19 +11,21 @@
       {"category": "Others", "value": 0.85}
     ]
   },
-  "width": 350,
-  "height": 350,
+  "width": 300,
+  "height": 300,
 
    "mark": {"type": "arc", "innerRadius": 90},
-  "title": {
+ "title": {
     "text": "SUBAREA: HOSPITAL AND OUTPATIENT CARE",
+    "offset":30,
+    "fontWeight": "bold",
+    "anchor": "start",
     "color": "#2B5EB9",
-    "font": "vertical-align: inherit;",
-    "fontSize": 16,
+    "fontSize": 14,
     "subtitle": "Representation of the 5 that receive the most resources.",
     "subtitleColor": "#333333",
-    "subtitleFont": "vertical-align: inherit;",
-    "subtitleFontSize": 11
+    "subtitleFontWeight":"normal",
+    "subtitleFontSize": 12
   },
 
   "encoding": {
