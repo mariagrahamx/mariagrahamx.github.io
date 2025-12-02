@@ -8,7 +8,7 @@
     "text": "Trends In Maternal Mortality By Ethnicity (UK, 2009-2023) "
   },
   "height": 300,
-  "width": 500,
+  "width": 550,
   "transform": [{"filter": "isValid(datum.Rate)"}],
   "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
   "encoding": {
