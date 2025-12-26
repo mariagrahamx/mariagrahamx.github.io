@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Stock prices of 5 Tech Companies over Time.",
   "data": {
-    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3_maternal_mortality_data_2009_2023.csv"
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3/wk3_maternal_mortality_data_2009_2023.csv"
   },
   "title": {
     "text": "Trends In Maternal Mortality By Ethnicity (UK, 2009-2023) "

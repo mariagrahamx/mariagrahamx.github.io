@@ -17,7 +17,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/charts/wk7_uk_local_planning_authorities_2023.topojson",
+        "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/charts/wk7/wk7_uk_local_planning_authorities_2023.topojson",
         "format": {
           "type": "topojson",
           "feature": "wk7_uk_local_planning_authorities_2023"
@@ -34,7 +34,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk7_derelict_land_points_scotland.csv"
+        "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk7/wk7_derelict_land_points_scotland.csv"
       },
       "projection": {"type": "mercator"},
       "mark": {

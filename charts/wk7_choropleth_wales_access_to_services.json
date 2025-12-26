@@ -24,7 +24,7 @@
       "lookup": "properties.LAD25CD",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk7_wales_access_to_services_LAD.csv"
+          "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk7/wk7_wales_access_to_services_LAD.csv"
         },
         "key": "Area code",
         "fields": ["Data values", "Area name"]

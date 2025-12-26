@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Bar chart with text labels. Set domain to make the frame cover the labels.",
   "data": {
-    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3_neonatal_mortality_data_2011_2017.csv"
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3/wk3_neonatal_mortality_data_2011_2017.csv"
   },
   "title": {
     "text": "Relative Risk Of Neonatal Death by Mothers' Ethnic Group (England & Wales, 2011–2017)",
