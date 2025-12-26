@@ -1,0 +1,173 @@
+/* This is an example CSS file. If you include it in your portfolio, it'll provide some clean and basic styling */
+/* for your page. Feel free to experiment with the values, or copy them into a new file and use that instead. */
+
+/* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
+
+
+body { /* We can style any HTML element by using its name - here we're styling the body */
+  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
+  font-family: 'Georgia, serif';
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  /* we want a white page, that's centered and not too wide */
+  background-color: #EFEFF6;
+  margin:0 auto;
+  max-width: 1100px;
+  padding-top: 60px;
+}
+
+
+/* Headings */
+h1 {
+  color: #333;
+  font-family:'Georgia, serif';
+  margin-top: 24px;
+  text-align: left;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+h2{
+  color: #333;
+  font-family:'Georgia, serif';
+  margin-top: 24px;
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+
+h3, h4, h5, h6 {
+  color: #1f1b5e;
+  font-family: 'Palatino, URW Palladio L, serif';
+  margin-top: 16px;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 570;
+}
+
+
+/* We want the headings to be a little bigger than the paragraph text */
+.big { /* This is the class we created in the HTML file, you can use it to style any element */
+  font-size: 2.5em;
+}
+
+/* h2 {
+  font-size: 1.75em;
+} */
+
+.small {
+  font-size: 1.25em;
+}
+
+/* Paragraph */
+p {
+  color: #525A76;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+
+section {
+  margin-bottom: 2.5em;  /* We want a little more space between sections */
+  max-width: 1000px;            /* wide */
+  margin: 2rem auto;            /* space between cards + center on page */
+  padding: 2rem 2.5rem;        /* space inside the card */
+  background: #fdfdfd;          /* soft cool off white background */
+  border-radius: 12px;          /* rounded corners */
+  border: 3px solid #5b03e7;    /* subtle border */
+  box-shadow: 0 7px 18px rgba(0,0,0,0.25);  /* soft shadow */
+}
+
+section > h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+/* Links */
+/* We want the links to be a little more visible  and a different color */
+a {
+  color: #065f46;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+  
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Chart Blocks */
+/* border: 2px dashed red; */
+
+.chart-block {
+  max-width: 700px;
+  margin: 2.5rem auto;
+
+}
+
+.chart-block figure {       
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+  color: #2d2a55;
+  font-family: 'Palatino', 'URW Palladio L', serif;
+}
+
+
+/* Charts and Maps Panels */
+
+.charts-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+
+}
+
+.chart-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.chart-panel figure {
+  margin: 0;
+}
+
+.maps-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.map-panel {
+  flex: 1;
+  max-width: 50%; 
+}
+
+.map-panel h3 {
+  margin-bottom: 0.5rem;
+}
+
+.map-panel figure {
+   width: 100%;
+  margin: 0;
+}
