@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk5_paris2024_medals_tidy_top10.csv"
+  },
+  "width": 500,
+  "height": 300,
+  "title": {
+    "text": "Top 10 Countries by Total Olympic Medals (Paris 2024)",
+    "subtitle": "Source: Wikipedia"
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "sum", "field": "Count", "as": "num_medals"}],
+      "groupby": ["Country", "MedalType"]
+    }
+  ],
+  "encoding": {
+    "x": {"field": "Country", "type": "ordinal", "title": "Country"},
+    "y": {"field": "MedalType", "type": "ordinal", "title": "Medal Type"}
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "num_medals",
+          "type": "quantitative",
+          "title": "Number of Medals",
+          "legend": {"direction": "horizontal", "gradientLength": 126}
+        }
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "num_medals", "type": "quantitative"},
+        "color": {
+          "condition": {"test": "datum['num_medals'] < 40", "value": "black"},
+          "value": "white"
+        }
+      }
+    }
+  ],
+  "config": {"axis": {"grid": true, "tickBand": "extent"}}
+}

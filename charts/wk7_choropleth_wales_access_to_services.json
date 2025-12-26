@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map showing Welsh Local Authority District boundaries using 2025 administrative boundaries.",
+  "title": {
+    "text": "Access to Services Deprivation in Wales",
+    "subtitle": [
+      "Shows count of LSOAs in each region ranked among the most deprived 20%",
+      "Source: ONS & StatsWales",
+      "Distribution by Local Authority (2025)"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 13,
+    "fontSize": 17,
+    "subtitleColor": "#5d5d5d"
+  },
+  "width": 250,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhellingsdata/RADataHub/refs/heads/main/MappingWorkshop/geo_data/LAD_WLS_2025_05.topojson",
+    "format": {"type": "topojson", "feature": "object_name"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.LAD25CD",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk7_wales_access_to_services_LAD.csv"
+        },
+        "key": "Area code",
+        "fields": ["Data values", "Area name"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "Data values",
+      "type": "quantitative",
+      "scale": {"scheme": "purpleblue"},
+      "title": "No. of LSOAs"
+    },
+    "tooltip": [
+      {
+        "field": "Area name",
+        "type": "nominal",
+        "title": "Local Authority District"
+      },
+      {"field": "Data values", "type": "quantitative", "title": "No. of LSOAs"}
+    ]
+  },
+  "projection": {"type": "mercator"},
+  "config": {}
+}

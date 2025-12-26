@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3_maternal_mortality_data_2009_2023.csv"
+  },
+  "title": {
+    "text": "Trends In Maternal Mortality By Ethnicity (UK, 2009-2023) "
+  },
+  "height": 300,
+  "width": 550,
+  "transform": [{"filter": "isValid(datum.Rate)"}],
+  "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
+  "encoding": {
+    "x": {
+      "field": "Mid-Year",
+      "type": "quantitative",
+      "title": "Mid-Year Of Rolling Period",
+      "axis": {"format": "d"}
+    },
+    "y": {
+      "field": "Rate",
+      "type": "quantitative",
+      "title": "Maternal Deaths Per 100,000"
+    },
+    "color": {"field": "Ethnicity", "type": "nominal", "title": "Ethnicity"}
+  },
+  "config": {}
+}
