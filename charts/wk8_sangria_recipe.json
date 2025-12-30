@@ -24,7 +24,7 @@
   "mark": {"type": "area"},
   "transform": [
     {
-      "calculate": "indexof(['Lemonade','Brandy','Apples','Sugar','Red wine','Oranges'], datum.item)",
+      "calculate": "indexof(['Lemonade','Brandy','Apples','Sugar','Oranges','Red wine'], datum.item)",
       "as": "stack_order"
     }
   ],
@@ -73,18 +73,18 @@
           "Sugar"
         ],
         "range": [
-          "#66c2a5",
-          "#fc8d62",
-          "#8da0cb",
-          "#e78ac3",
-          "#a6d854",
-          "#ffd92f"
+          "#3290b6",   
+          "#148495",   
+          "#047673",
+          "#7bafd3", 
+          "#a2bddb",
+          "#559fc8"
         ]
       },
       "legend": {
         "values": [
-          "Oranges",
           "Red wine",
+          "Oranges",
           "Sugar",
           "Apples",
           "Brandy",
@@ -92,7 +92,7 @@
         ]
       }
     },
-    "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.2},
+    "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.6},
     "tooltip": [
       {
         "field": "date",
@@ -110,4 +110,4 @@
     ]
   },
   "config": {}
-}
+}  
