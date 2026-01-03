@@ -1,4 +1,4 @@
-Datazone,dist_km,Income_Domain,Employment_Domain,Education_Domain,Health_Domain,Crime_Domain
+Datazone,dist_km,Income_Domain_Rank,Employment_Domain_Rank,Education_Domain_Rank,Health_Domain_Rank,Crime_Domain_Rank
 S01009758,0.5713026102467132,5861.5,4396.0,4903,3273,5523.0
 S01009759,0.2894445882050861,23.0,168.0,1291,255,791.0
 S01009760,0.15933270421408904,1083.0,971.0,715,881,2079.0
