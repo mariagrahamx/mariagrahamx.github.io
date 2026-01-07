@@ -37,7 +37,7 @@
 
 body {
   font-family: 'Palatino', 'URW Palladio L', serif;
-  font-size: 18px;
+  font-size: 16.7px;
   color: #333;
   line-height: 1.6;
   background-color: #EFEFF6;
@@ -281,6 +281,61 @@ section.project-section {
   margin: 0;
 }
 
+/* Academic integrity dropdown */
+.academic-integrity-container {
+  margin: 4rem auto 2rem;
+  max-width: 400px;
+  text-align: center;
+}
+
+.academic-integrity-btn {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #1f1b5e;
+  border: 2px solid rgba(31, 27, 94, 0.35);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* remove default marker */
+.academic-integrity-btn::-webkit-details-marker {
+  display: none;
+}
+
+.academic-integrity-btn:hover {
+  filter: brightness(0.98);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+}
+
+.academic-integrity-content {
+  margin-top: 1rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 14px;
+  background: #fafaff;
+  border: 2px solid rgba(41, 3, 103, 0.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+  text-align: center;
+}
+.academic-integrity-content p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+
 /* ===================================
    Extra additions (fade + tasks + responsive)
    =================================== */
@@ -404,7 +459,6 @@ section.project-section {
   padding: 0 !important;
   z-index: 5;
 }
-
 
 /* Responsive layout: stack when the page is narrow */
 @media (max-width: 900px) {

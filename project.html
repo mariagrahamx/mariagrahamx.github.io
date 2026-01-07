@@ -58,8 +58,9 @@
       economic and social shifts, particularly within the Central Belt, which was once a highly industrialised region
       of the country.
       <br><br>
-      Focusing on Glasgow City, this project uses publicly available geospatial and socioeconomic data to examine the incidence of derelict
-      and vacant land sites within the Local Authority and to explore the relationship they have with deprivation.
+      Focusing on Glasgow City, this project investigates whether derelict and vacant land sites are spatially associated 
+      with patterns of socioeconomic deprivation, and whether the regeneration of such sites has the potential to 
+      influence deprivation outcomes in nearby areas over time.
     </h4>
   </section>
 
@@ -102,7 +103,7 @@
   <!-- GLASGOW (hidden first) -->
   <div id="glasgowBlock" style="display:none;">
     <h1 class="centered-title small">
-     Derelict and Vacant Land Sites Have Multiplied Across Glasgow Since 1980
+     Derelict and Vacant Land Sites Have Multiplied Across Glasgow <br> Since 1980
     </h1>
 
     <div class="chart-layout">
@@ -338,6 +339,20 @@ require more nuanced, context-specific interventions beyond regeneration alone.
       </details>
 
     </div>
+  </section>
+  
+<details class="academic-integrity-container">
+  <summary class="academic-integrity-btn">
+    Academic Integrity Statement
+  </summary>
+
+  <div class="academic-integrity-content">
+    <p>
+      I utilised Generative AI tools to aid in troubleshooting and assist with CSS styling.
+      All analysis, interpretation, and conclusions are my own.
+    </p>
+  </div>
+</details>
 
 
   <!-- =========================
@@ -397,6 +412,12 @@ require more nuanced, context-specific interventions beyond regeneration alone.
     }, { threshold: 0.15 });
 
     fadeSections.forEach(section => observer.observe(section));
+
+  function toggleDisclosure() {
+    const content = document.getElementById("academic-integrity-content");
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  }
   </script>
 </body>
 </html>

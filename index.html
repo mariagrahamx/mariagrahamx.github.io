@@ -282,7 +282,7 @@
   <!-- Section 7 -->
   <section class="fade-in-section">
     <div class="chart-description">
-      <h2>CC7: Maps. Base maps and choropleths</h2>
+      <h2>CC7: Maps. Base Maps and Choropleths</h2>
 
       <details class="task-brief">
         <summary class="task-summary">
@@ -453,10 +453,26 @@
         </div>
       </details>
     </div>
+  </section>
+
+<details class="academic-integrity-container">
+  <summary class="academic-integrity-btn">
+    Academic Integrity Statement
+  </summary>
+
+  <div class="academic-integrity-content">
+    <p>
+      I utilised Generative AI tools to aid in troubleshooting and assist with CSS styling.
+      All analysis, interpretation, and conclusions are my own.
+    </p>
+  </div>
+</details>
 
 
-  <!-- Main script: embeds + fade-in activation -->
+  <!-- Main script -->
   <script>
+  // Embeds + fade-in activation
+
     let figure_1_spec = "charts/wk1_agingPopulation.json";
     let figure_3_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-07-04-tennis-time/visualisation/fig1_strawberry_prices.json";
 
@@ -624,6 +640,7 @@
     }, { threshold: 0.15 });
 
     fadeSections.forEach(section => observer.observe(section));
+
   </script>
 
 </body>
