@@ -1,0 +1,55 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Various US measures state by state",
+
+  "title": {
+    "text": "Prices in London",
+    "subtitle":["Looks interesting, but is this right? ",""],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/pricesByItem/item220303_deciles.csv",
+    "format":{"type":"csv"}},
+
+"mark": {
+      "type":"area",
+      "orient":"vertical",
+      "opacity": 0.7
+    },
+  
+  "height": 300,
+  "width": 450,
+
+  "transform": [
+    {"calculate": "datum.p20-datum.p10", "as": "gap1"},
+    {"calculate": "datum.p30-datum.p20", "as": "gap2"},
+    {"calculate": "datum.p40-datum.p30", "as": "gap3"},
+
+        {"fold":["p10","p20","p30","p40","p50","p60","p70","p80","p90"], "as": ["decile", "price"]}
+        ],
+
+  "encoding": {
+
+    "x": {
+      "field": "date4", 
+      "type": "temporal",
+      "title":null
+      },
+
+    "y": {
+        "field": "price",
+        "type": "quantitative",
+        "title":null
+      },
+
+      "color": {
+        "legend":null,
+        "field": "decile",
+        "scale": {"range": ["#D9D9F3", "#00BFFF", "#0276FD", "#000080", "#000080", "#0276FD", "#00BFFF", "#D9D9F3", "white" ]}
+      },
+   }
+}

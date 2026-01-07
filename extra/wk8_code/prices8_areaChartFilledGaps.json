@@ -1,0 +1,65 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Various US measures state by state",
+
+  "title": {
+    "text": "Prices in London",
+    "subtitle":["An example with too much data",""],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/pricesByItem/item220303_deciles.csv",
+    "format":{"type":"csv"}},
+
+"mark": {
+      "type":"area",
+      "orient":"vertical",
+      "opacity": 0.7
+    },
+  
+  "height": 300,
+  "width": 450,
+
+  "transform": [
+    
+    {"calculate": "datum.p10", "as": "gap0"},
+
+    {"calculate": "datum.p20-datum.p10", "as": "gap1"},
+    {"calculate": "datum.p30-datum.p20", "as": "gap2"},
+    {"calculate": "datum.p40-datum.p30", "as": "gap3"},
+    {"calculate": "datum.p50-datum.p40", "as": "gap4"},
+    {"calculate": "datum.p60-datum.p50", "as": "gap5"},
+    {"calculate": "datum.p70-datum.p60", "as": "gap6"},
+    {"calculate": "datum.p80-datum.p70", "as": "gap7"},
+    {"calculate": "datum.p90-datum.p80", "as": "gap8"},
+
+    {"fold":["gap0","gap1","gap2","gap3", "gap4","gap5","gap6","gap7", "gap8"], "as": ["decileGaps", "price"]}
+        ],
+
+  "encoding": {
+
+    "x": {
+      "field": "date4", 
+      "type": "temporal",
+      "title":null,
+      "axis":{"grid":false}
+      },
+
+    "y": {
+        "field": "price",
+        "type": "quantitative",
+        "title":null,
+        "axis":{"grid":false}
+      },
+
+      "color": {
+        "legend":null,
+        "field": "decileGaps",
+        "scale": {"range": ["rgb(210,250,250)", "#00BFFF", "#0276FD", "#000080", "#000080", "#0276FD", "#00BFFF", "rgb(210,250,250)", "white" ]}
+      }
+   }
+}

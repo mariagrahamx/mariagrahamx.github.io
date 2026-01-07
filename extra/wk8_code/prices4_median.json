@@ -1,0 +1,41 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Various US measures state by state",
+
+  "title": {
+    "text": "Prices in London",
+    "subtitle":["An example with too much data",""],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/pricesByItem/item220303_deciles.csv",
+    "format":{"type":"csv"}},
+
+  "mark": {
+    "type":"circle",
+    "size":150,
+    "color":"rgba(0,67,167, 0.5)"},
+  
+  "height": 300,
+  "width": 450,
+
+  "encoding": {
+
+    "x": {
+      "field": "date4", 
+      "type": "temporal",
+      "title":null
+      },
+
+    "y": {
+      "field": "p50", 
+      "type": "quantitative",
+      "title":null
+      }
+
+   }
+}

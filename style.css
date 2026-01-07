@@ -1,0 +1,466 @@
+/* This is an example CSS file. If you include it in your portfolio, it'll provide some clean and basic styling */
+/* for your page. Feel free to experiment with the values, or copy them into a new file and use that instead. */
+
+/* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
+
+/* Navigation Bar */
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-family: 'Palatino', 'URW Palladio L', serif;
+}
+
+.nav-name {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1f1b5e;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+  color:#170e8f;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  border-bottom: 2px solid color(#4b468d);
+}
+
+/* Body */
+
+body {
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  background-color: #EFEFF6;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding-top: 25px;
+}
+
+
+/* Headings */
+h1 {
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 700;
+  color: #1f1b5e;
+  margin: 1.2rem 0 0.8rem;
+  text-align: left;
+}
+
+.centered-title {
+  text-align: center;
+}
+
+.left-text {
+  text-align: left;
+}
+
+h2{
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 2.1rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #333;         
+  margin: 1.6rem 0 0.9rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  font-weight: 650;
+  color: #2d2a55;
+  margin: 1.2rem 0 0.7rem;
+  text-align: center;
+}
+
+h4, h5, h6 {
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 1.44rem;
+  line-height: 1.6;
+  font-weight: 200;
+  color: #525A76;
+  margin: 1.2rem 0 0.7rem;
+  text-align: left;
+}
+
+
+/* We want the headings to be a little bigger than the paragraph text */
+.big {
+  font-size: 2.3em;
+}
+
+.small {
+  font-size: 1.8em;
+}
+
+/* Paragraph */
+p {
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 1.28rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #525A76;
+  margin: 2rem 0 0.6rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2d2a55;
+  text-align: center;
+  max-width: 70ch;
+  margin: 0.6rem auto 0;
+}
+
+section {
+  margin-bottom: 2.5em;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem 2rem;
+  background: #fdfdfd;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.10), inset 0 4px 0 rgba(31, 27, 94, 0.18);
+}
+
+section > h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color:#170e8f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  border-bottom: 2px solid color(#4b468d);
+}
+
+  
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Project section (fade into page background) */
+section.project-section {
+  background: #EFEFF6;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  padding: 2rem 0;
+  max-width: 1000px; 
+  margin: 2rem auto; 
+}
+
+/* Chart Blocks */
+.chart-block {
+  width: fit-content;
+  margin: 2.5rem auto;
+  /* border: 2px dashed red; */
+}
+
+.chart-block figure {       
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chart-title {
+  text-align: left;
+  width: 100%;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 650;
+  margin: 0 0 1rem;
+  color: #1f1b5e;
+  font-family: 'Palatino', 'URW Palladio L', serif;
+}
+
+/* Side-by-side chart layout (description left, chart right) */
+.chart-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.chart-text {
+  flex: 0 0 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+
+.chart-text h2,
+.chart-text h3 {
+  text-align: left;
+  margin-top: 8rem;
+  font-size: 1.8rem;
+}
+
+.chart-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #525A76;
+  margin-top: 0.25rem;
+}
+
+.chart-figure {
+  flex: 0 0 100%;
+}
+
+/* Charts and Maps Panels */
+.charts-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.chart-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.chart-panel figure {
+  margin: 0;
+  width: 100%;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.chart-grid .chart {
+  width: 100%;
+}
+
+.maps-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.map-panel {
+  flex: 1;
+  max-width: 50%; 
+  align-items: stretch;
+}
+
+.map-panel h3 {
+  margin-bottom: 0.5rem;
+}
+
+.map-panel figure {
+  width: 100%;
+  margin: 0;
+}
+
+/* ===================================
+   Extra additions (fade + tasks + responsive)
+   =================================== */
+
+/* Fade-in effect for sections (apply class="fade-in-section" to a section) */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Collapsible task brief (matches <details class="task-brief"> ... ) */
+.task-brief {
+  margin: 1rem auto 0;
+  max-width: 900px;
+}
+
+/* Clickable "button" */
+.task-summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #1f1b5e;
+  border: 2px solid rgba(31, 27, 94, 0.35);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.task-summary::-webkit-details-marker {
+  display: none;
+}
+
+.task-summary:hover {
+  filter: brightness(0.98);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+}
+
+.task-summary:active {
+  transform: translateY(1px);
+}
+
+/* Chevron on the right */
+.task-chevron {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate chevron when open */
+.task-brief[open] .task-chevron {
+  transform: rotate(180deg);
+}
+
+/* Revealed task content panel */
+.task-content {
+  margin-top: 1rem;
+  padding: 1.6rem 2rem;
+  border-radius: 14px;
+  background: #fafaff;
+  border: 2px solid rgba(41, 3, 103, 0.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+  text-align: center;
+}
+
+.task-content p {
+  margin: 0;
+}
+
+/* Ensure Vega/Vega-Lite embeds shrink to fit on smaller screens */
+.vega-embed,
+.vega-embed > div {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.vega-embed svg,
+.vega-embed canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Vega-Embed actions (3 dots): keep it inside the chart corner, no weird spacing */
+.vega-embed {
+  position: relative;
+}
+
+.vega-actions {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 5;
+}
+
+/* Responsive layout: stack when the page is narrow */
+@media (max-width: 900px) {
+  section {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .charts-row,
+  .maps-row {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .map-panel {
+    max-width: 100%;
+  }
+
+  .chart-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .chart-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 1.25rem 1rem;
+  }
+
+  .task-summary {
+    padding: 0.95rem 1.1rem;
+    font-size: 1rem;
+  }
+
+  .task-content {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .chart-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* End of CSS file */
+

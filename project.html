@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>    
+    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+
+    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
+    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Maria's Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+
+    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION SECTION
+       ========================= -->
+<header class="top-nav">
+  <div class="nav-name fade-in-section">Maria Graham</div>
+
+  <nav class="nav-links fade-in-section">
+    <a href="index.html">Portfolio</a>
+    <a href="project.html">Project</a>
+    <a href="https://github.com/mariagrahamx" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/maria-g-1655941b4/" target="_blank">LinkedIn</a>
+  </nav>
+</header>
+
+  <!-- =========================
+       PROJECT TITLE SECTION
+       ========================= -->
+   <h1 class="fade-in-section centered-title big">
+    How Are Derelict and Vacant Land Sites Spatially Related to Deprivation in Glasgow?
+  </h1>
+
+  <!-- =========================
+       PROJECT INTRO SECTION
+       ========================= -->
+  <section class="fade-in-section">
+    <h2 class="centered-title small">Aims</h2>
+
+    <h4>
+      Deindustrialisation in Scotland accelerated during the second half of the twentieth century,
+      marked by the collapse of key industries such as coal mining, shipbuilding, steel, and heavy engineering.
+      This decline left a substantial legacy of neglected land across the nation that coincided with significant
+      economic and social shifts, particularly within the Central Belt, which was once a highly industrialised region
+      of the country.
+      <br><br>
+      Focusing on Glasgow City, this project uses publicly available geospatial and socioeconomic data to examine the incidence of derelict
+      and vacant land sites within the Local Authority and to explore the relationship they have with deprivation.
+    </h4>
+  </section>
+
+  <!-- =========================
+     Visualisations 1 & 2
+     Scotland ⇄ Glasgow toggle
+     Uses chart-layout (text left, map right)
+     ========================= -->
+
+<section class="project-section fade-in-section">
+
+  <!-- SCOTLAND (shown first) -->
+  <div id="scotlandBlock">
+    <h1 class="centered-title small">
+      Distribution of Derelict and Vacant Land Sites Across Scotland
+    </h1>
+
+    <div class="chart-layout">
+      <!-- LEFT -->
+      <div class="chart-text">
+        <h2> National Spatial Pattern</h2>
+        <p>
+          Derelict and vacant land sites are unevenly distributed across Scotland, 
+          with a clear concentration in the Central Belt, highlighted by
+          the outlined purple boundary.
+        </p>
+
+        <button id="toGlasgowBtn" class="task-summary" type="button" style="margin-top: 1rem;">
+          Click to Take a Closer Look at Glasgow
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="chart-figure">
+        <figure id="ScotlandChart"></figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLASGOW (hidden first) -->
+  <div id="glasgowBlock" style="display:none;">
+    <h1 class="centered-title small">
+     Derelict and Vacant Land Sites Have Multiplied Across Glasgow Since 1980
+    </h1>
+
+    <div class="chart-layout">
+      <!-- LEFT -->
+      <div class="chart-text">
+        <h2> Zoom into Glasgow</h2>
+        <p>
+          Newly recorded derelict and vacant land sites have continued to emerge across Glasgow since 
+          the late twentieth century, with their distribution becoming increasingly 
+          widespread over time.
+        </p>
+
+
+        <button id="toScotlandBtn" class="task-summary" type="button" style="margin-top: 1rem;">
+          Click to Take a Wider Look at Scotland
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="chart-figure">
+        <figure id="GlasgowChart"></figure>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- =========================
+     Visualisation 3
+     Scotland Local Authority 
+     % Population In Deprived Areas
+     ========================= -->
+<section class="project-section fade-in-section"> 
+
+  <h1 class="centered-title small">
+    How Does Glasgow Compare to Other Scottish Local Authorities in Terms of Deprivation?
+  </h1>
+
+  <p>Glasgow City is one of Scotland's most deprived areas. Based on Overall Scottish Indices of Multiple Deprivation (SIMD) 
+    Rankings, it has the second-highest share of its population living in data zones classified within the three most 
+    deprived deciles (deciles 1 to 3).
+  </p>
+
+
+   <div class="chart-block">
+  <figure id="ScottishLAPopChart"></figure>
+</div>
+
+
+</section>
+
+<!-- =========================
+     Visualisation 4
+     Glasgow SMID Domain Chart 
+     X Distance to Nearest Site 
+     ========================= -->
+
+
+<section class="project-section fade-in-section"> 
+
+  <h1 class="centered-title small">
+    Is Deprivation Spatially Associated with Distance to Derelict and Vacant Land in Glasgow?
+  </h1>
+
+  <p>Across the four of the five observed SIMD domains, higher levels of deprivation are seen in data zones located closest 
+    to derelict and vacant land sites, as shown by the clustering in the bottom-left of each plot. 
+    A weak but consistent positive gradient between distance and SIMD rank across those domains suggests that 
+    proximity to derelict or vacant land is associated with deprivation in Glasgow.
+  </p>
+
+
+   <div class="chart-block">
+  <figure id="GlasgowSIMDDistancesChart"></figure>
+</div>
+
+
+</section>
+
+<!-- =========================
+     Visualisation 5
+     Supervised Learning
+     ========================= -->
+  <section class="project-section fade-in-section"> 
+
+  <h1 class="centered-title small">
+    Given A Data Zone's Deprivation Profile, Can We Predict its Distance to the Nearest Derelict or Vacant Land Site?
+  </h1>
+
+  <p> Hypothesis: A data zone's deprivation profile can predict its distance to the nearest derelict or vacant land site.
+  </p>
+
+
+   <div class="chart-block">
+  <figure id="SupervisedLearningChart"></figure>
+</div>
+
+ <p> Interpretation: Deprivation indicators predict distance with weak accuracy (R² ≈ 20%), indicating some predictive power 
+  but still significant unexplained spatial variation.
+  </p>
+  
+</section>
+
+<section class="fade-in-section">
+
+    <h4 class="centered-title">
+      While the regression model shows that deprivation profiles only weakly predict a data zone's proximity to derelict or vacant land sites, 
+      investment in regeneration is a tool that has been widely used by policymakers to improve social and economic outcomes in Scotland.
+    </h4>
+  </section>
+
+
+<!-- =========================
+     Visualisation 6
+     Change in SIMD after Repurposing
+     Derelict Land - Athelete's Village
+     ========================= -->
+
+<section class="project-section fade-in-section"> 
+
+  <h1 class="centered-title small">
+    Does Regeneration of Derelict and Vacant Land Affect Nearby Area Deprivation Over Time?
+  </h1>
+
+  <p> Between 2012 and 2014, a previously neglected industrial brownfield site in Glasgow was repurposed through a 
+    regeneration project to form the Athletes' Village for the 2014 Commonwealth Games. Following the Games, 
+    the site was further developed into permanent housing and green spaces for public use. Using SIMD data from
+    approximately two and six years after the site became publicly accessible, the chart below examines changes in median
+    deprivation levels across data zones at varying distances from the site.
+  </p>
+
+
+   <div class="chart-block">
+  <figure id="GlasgowSIMDPostRegenChart"></figure>
+</div>
+
+</section>
+
+<!-- =========================
+     Visualisation 7
+     Advanced Analytics
+     ========================= -->
+<section class="project-section fade-in-section"> 
+
+  <h1 class="centered-title small">
+    How Do Deprivation Outcomes Compare Across Domains and by Distance from Athletes' Village?
+  </h1>
+
+  <p> The heatmap below provides a comparative view of changes in deprivation outcomes across domains and distance bands relative to the 
+    repurposed derelict site by subtracting 2016 median SIMD ranks from those in 2020. It shows that changes in deprivation 
+    levels are not uniform across domains, and that the relative size of improvements varies across distance bands in ways 
+    that differ from one domain to another.
+  </p>
+
+
+   <div class="chart-block">
+  <figure id="AdvancedAnalyticsChart"></figure>
+</div>
+</section>
+
+<!-- =========================
+     Conclusion
+     ========================= -->
+<section class="section fade-in-section"> 
+
+  <h1 class="centered-title small">
+    Conclusions
+  </h1>
+
+  <p> Glasgow is one of Scotland’s most deprived cities, with a high concentration of derelict and vacant land rooted in its 
+    industrial history. While deprivation and the presence of such sites frequently coincide, proximity alone does not fully 
+    explain Glasgow’s high deprivation levels, as reflected in the weak predictive power of the supervised learning model 
+    (R² = 20.2%).
+
+<br><br>
+Analysis of the Athletes’ Village regeneration project shows no clear short-term trend in the deprivation outcomes of surrounding areas, 
+though it must be noted that socioeconomic change often unfolds over longer time horizons than those observed here. Overall, 
+the findings point to a complex relationship between land use and deprivation, suggesting that effective policy responses 
+require more nuanced, context-specific interventions beyond regeneration alone.
+  </p>
+
+</section>
+
+ <!-- Appendix -->
+
+   <section class="fade-in-section">
+    <div class="chart-description">
+      <h1 class="centered-title small"> Appendix </h1>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          Challenges <span class="task-chevron">▼</span>
+        </summary>
+        <div class="centered-title task-content">
+          <p>
+            
+          </p>
+        </div>
+      </details>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          Data Sources <span class="task-chevron">▼</span>
+        </summary>
+        <div class="centered-title task-content">
+          <p>
+            <a href="https://geoportal.statistics.gov.uk/datasets/a927ee99adb34f6a943e447a193a0d5b_0/explore" target="_blank"> UK Local Planning Authorities Boundaries (2023)</a> <br>
+            <a href="https://www.publiccontractsscotland.gov.uk/Maps/LocalAuthorityRegions.aspx" target="_blank"> Local Authorities in Scotland's Central Belt</a> <br>
+            <a href="https://martinjc.github.io/UK-GeoJSON/" target="_blank"> Glasgow City Data Zones (2011 Boundaries)</a> <br>
+            <a href="https://datamap-scotland.co.uk/simd-local-authorities/" target="_blank"> Scottish Local Authorities Social Deprivation (2020)</a> <br>
+            <a href="https://simd.scot/#/simd2020/BTTTFTT/9/-4.0000/55.9000/" target="_blank"> Scottish Index Of Multiple Deprivation (2020)</a> <br>
+            <a href="https://simd.scot/#/simd2016/BTTTFTT/9/-4.0000/55.9000/" target="_blank"> Scottish Index Of Multiple Deprivation (2016)</a> <br>
+            <a href="https://en.wikipedia.org/wiki/Athletes%27_Village_(Glasgow_2014)" target="_blank"> Athletes' Village Coordinates</a>
+          </p>
+        </div>
+      </details>
+
+       <details class="task-brief">
+        <summary class="task-summary">
+          Colab Notebooks <span class="task-chevron">▼</span>
+        </summary>
+        <div class="centered-title task-content">
+          <p>
+            <a href="https://colab.research.google.com/drive/1wnfQiKsHA0uHVADIUHBbutUyQoKFrDvO?usp=sharing" target="_blank"> Scottish Derelict Sites Notebook (Chart 1)</a> <br>
+            <a href="https://colab.research.google.com/drive/1S1eNwwP5JUjcfjyGyxxdb5Bl2a5xci0y?usp=sharing" target="_blank"> Glasgow Derelict Sites Notebook (Chart 2)</a> <br>
+            <a href="https://colab.research.google.com/drive/1iARTTEm1KqIlVVwkYD-hi3kIR65BCEgA?usp=sharing" target="_blank"> Glasgow Deprivation vs Other Local Authorities (Chart 3)</a> <br>
+            <a href="https://colab.research.google.com/drive/1qjbgn9zl-iD9d83OW1VG47u7ihXuT8IL?usp=sharing" target="_blank"> Glasgow SIMD CSV Cleaning</a> <br>
+            <a href="https://colab.research.google.com/drive/1OREEE2aql0P7SSU_7e8BbaCgyKqf11MX?usp=sharing" target="_blank"> Glasgow SIMD Domain Ranks x Distance to Derelict or Vacant Sites (Chart 4)</a> <br>
+            <a href="https://colab.research.google.com/drive/1XjY8Mv9nidhUZCTxbYatAmB5BK5RQaDu?usp=sharing" target="_blank"> Glasgow Predicting Distance to Derelict or Vacant Sites by Deprivation Profile (Chart 5)</a> <br>
+            <a href="https://colab.research.google.com/drive/1d7E1C45p8VXlWvpdK5QoyKEUQNOiy68K?usp=sharing" target="_blank"> Glasgow SIMD Domain Ranks x Distance to Athletes' Village (Chart 6)</a> <br>
+            <a href="https://colab.research.google.com/drive/1l0kJgL_ePafEGV4YSGyFGTLVDbX_JKf0?usp=sharing" target="_blank"> Glasgow Change in Median SIMD Ranks Following Nearby Site Regeneration (Chart 7)</a> <br>
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+
+  <!-- =========================
+       Scripts: embeds + fade + toggle
+       ========================= -->
+
+<script>
+    /* Chart specs (same pattern as index.html) */
+    let scotland_figure_spec = "project/scotland_derelict_and_vacant_land.json";   
+    let glasgow_figure_spec  = "project/derelict_land_map_glasgow.json";  
+    let scottish_LA_pop_in_deprived_areas_spec = "project/scottish_LA_pop_in_deprived_areas.json"; 
+    let glasgow_simd_x_distance_sites_spec = "project/glasgow_sites_x_simd_domain.json"; 
+    let supervised_learning_spec = "project/glasgow_predict_distance_to_site.json"; 
+    let glasgow_simd_post_regen_spec = "project/glasgow_simd_2016_vs_2020_distance_to_village.json";
+    let advanced_analytics_spec = "project/glasgow_simd_median_ranks_change.json";
+
+
+
+    /* Embed charts */
+    vegaEmbed('#ScotlandChart', scotland_figure_spec);
+    vegaEmbed('#GlasgowChart', glasgow_figure_spec);
+    vegaEmbed('#ScottishLAPopChart', scottish_LA_pop_in_deprived_areas_spec);
+    vegaEmbed("#GlasgowSIMDDistancesChart", glasgow_simd_x_distance_sites_spec);
+    vegaEmbed("#SupervisedLearningChart", supervised_learning_spec);
+    vegaEmbed("#GlasgowSIMDPostRegenChart", glasgow_simd_post_regen_spec);
+    vegaEmbed("#AdvancedAnalyticsChart", advanced_analytics_spec);
+    
+
+    /* Toggle logic */
+    const scotlandBlock = document.getElementById('scotlandBlock');
+    const glasgowBlock = document.getElementById('glasgowBlock');
+    const toGlasgowBtn = document.getElementById('toGlasgowBtn');
+    const toScotlandBtn = document.getElementById('toScotlandBtn');
+
+    toGlasgowBtn.addEventListener('click', () => {
+      scotlandBlock.style.display = 'none';
+      glasgowBlock.style.display = 'block';
+    });
+
+    toScotlandBtn.addEventListener('click', () => {
+      glasgowBlock.style.display = 'none';
+      scotlandBlock.style.display = 'block';
+      scotlandBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    /* Fade-in observer (fade in + fade out) */
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeSections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

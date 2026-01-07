@@ -1,30 +1,12 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
 <!DOCTYPE html>
-<html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
+<html>
 
 <head>    
     <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
 
     <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
     <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Maria's Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
 
     <!-- This is a link to the vega-lite which we're using to make graphs -->
@@ -40,305 +22,610 @@
     </style>
 </head>
 
-<body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Maria Graham 
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Maria Graham | <a href="https://www.linkedin.com/in/maria-g-1655941b4/">LinkedIn</a> | <a
-            href="https://github.com/mariagrahamx">GitHub</a>
-    </p>
-    <h1 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        Hi! My name is Maria Graham. <br> 
-        Welcome to my portfolio page for PP434 - Automated Data Visualisation for Policymaking.
-    </h1>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+<body>
+<!-- Navigation -->
 
-    <!-- Section 1 -->
-    <section>
-        <div class="chart-description">
-            <h2> CC1: Hosting </h2>
-            <h3> Task: Set up your own Github account and live page using GitHub pages. <br>
-                 Add two charts using the vegaEmbed function. </h3>
+<header class="top-nav">
+  <div class="nav-name fade-in-section">Maria Graham</div>
+
+  <nav class="nav-links fade-in-section">
+    <a href="index.html">Portfolio</a>
+    <a href="project.html">Project</a>
+    <a href="https://github.com/mariagrahamx" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/maria-g-1655941b4/" target="_blank">LinkedIn</a>
+  </nav>
+</header>
+
+ <!-- Introduction -->
+  <h1 class="fade-in-section">
+    Hi! My name is Maria Graham. <br>
+    Welcome to my portfolio page for PP434 - Automated Data Visualisation for Policymaking.
+  </h1>
+
+  <!-- Section 1 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC1: Hosting</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Hosting Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Set up your own GitHub account and live page using GitHub Pages. Add two charts using the vegaEmbed
+            function (one from the course repository and one from an external web source).
+          </p>
+        </div>
+      </details>
+  
+     <div class="chart-block">
+      <p class="chart-title">Chart 1: Added from Richard's Repository</p>
+        <figure id="Location1"></figure>
+      </div>
+
+      <div class="chart-block">
+      <p class="chart-title">Chart 2: Added from the web</p>
+        <figure id="Location3"></figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC2: Building</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Building Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Build two separate charts using the "create" tool from the Economics Observatory Data Hub. Embed both
+            charts into your page using the vegaEmbed function.
+          </p>
+        </div>
+      </details>
+
+      <div class="charts-row">
+        <div class="chart-panel">
+          <p class="chart-title">Chart 3: Unemployment rate in Ethiopia</p>
+          <figure id="Location4"></figure>
         </div>
 
-    <!-- Chart 1 -->
-
-            <div class="charts-row">
-                <div class="chart-panel">
-                    <p class="chart-title">Chart 1: Added from Richard's Repository </p>
-                    <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                </div>
-
-            <div class="chart-panel">
-                <p class="chart-title"> Chart 2: Added from the web  </p>
-                <figure id="Location3"></figure>
-            </div>
-            </div>
-    </section>
-
-      <!-- Section 2 -->
-    <section>
-        <div class="chart-description">
-            <h2>CC2: Building</h2>
-            <h3> Task: Build two separtate charts using the "create" tool from the Economics Observatory Data Hub. <br>
-                 Embed these two charts into your page using the vegaEmbed function. </h3>
-           
-           <div class="charts-row">
-                <div class="chart-panel">
-                    <p class="chart-title">Chart 3: Unemployment rate in Ethiopia</p>
-                    <figure id="Location4"></figure>
-                </div>
-
-            <div class="chart-panel">
-                <p class="chart-title">Chart 4: Internally displaced people in Ethiopia</p>
-                <figure id="Location5"></figure>
-            </div>
-            </div>
-           
-           
+        <div class="chart-panel">
+          <p class="chart-title">Chart 4: Internally displaced people in Ethiopia</p>
+          <figure id="Location5"></figure>
         </div>
-    </section>
-    
-    
-    <!-- Section 3 -->
-    <section>
-        <div class="chart-description">
-            <h2>CC3: Debate </h2>
-            <h3> Task: Produce two charts that support or refute (or are related to in some way) to a topic of policy debate. </h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               Should the UK implement targeted obstetric care programs for ethnic minority women?
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC3: Debate</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Debate Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Produce two charts that support or refute (or relate to) a topic of policy debate.
+          </p>
         </div>
+      </details>
 
-            <div class="chart-block">
-            <figure id="Location6"></figure>
-            </div>
-
-        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-            Both charts reveal clear disparities in maternal and neonatal ..... among ethnic minority groups, suggesting that current universal services may be ineffective in addressing their specific needs. 
+        <p>
+        Policy Question: Should the UK Implement Targeted Obstetric Care Programs for Ethnic Minority Women?
         </p>
-
-             <div class="chart-block">
-            <figure id="Location7"></figure>
-            </div>
-
-    </section>
-    
-    <!-- Section 4 -->
-    <section>
-        <div class="chart-description">
-            <h2>CC4: Replication </h2>
-            <h3> Task: Find a chart that a policy organisation, a journalist, think tank, television channel or company has used. <br> 
-                 Replicate it, and then improve on it.</h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               I found this chart on the Brazilian Government's Transparency Portal website. It gives an overview of how spending is distributed within the Hospital and Outpatient Care sub-area.
-            </p>
-        </div>
-
-        <div class="charts-row">
-            <div class="chart-panel">
-                <p class="chart-title"> Original:</p>
-                <img src = "wk4/wk4_hw_image.png" alt ="" width="360px" height="310px"> 
-            </div>
-
-            <div class="chart-panel" style="width: 350px; align-items: center;">
-                <p class="chart-title"> My Replication:</p>
-                <figure id="Location8" style="width: 350px"></figure>
-            </div>
-        </div>
-
+      
         <div class="chart-block">
-        <p class="chart-title"> My Improvement:</p>
-        <figure id="Location8_5"></figure>
+        <figure id="Location6"></figure>
         </div>
 
-     <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               Summary .......
-            </p>
-        </div>
-    </section>
-    
-     <!-- Section 5 -->
-    <section>
-        <div class="chart-description">
-            <h2>CC5: Accessing data: Scraper and API</h2>
-            <h3> API Task: Add a chart to your site that uses a live link to an API. <br>
-                 Below the chart, add a functional description of the API</h3>
-        </div>
-
-        <div class="chart-block">
-            <figure id="Location9"></figure>
-        </div>
-
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               (functional description of the API) .......
-            </p>
+         <p>
+            Together, these charts reveal clear disparities in maternal and neonatal mortality among ethnic minority women, 
+            suggesting that current universal maternity and neonatal services are insufficient at addressing the specific risks 
+            faced by these demographic groups. 
+        </p>
         
-        <div class="chart-description">
-        <h3> Scraper Task: Using a Google Colab python notebook, scrape a website. <br>
-            Then clean and normalise the data and export into TIDY (long form) format.</h3>
-        </div>
-
         <div class="chart-block">
-            <figure id="Location10"></figure>
+            <figure id="Location7"></figure>
+        </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC4: Replication</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Replication Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Find a chart used by a policy organisation, journalist, think tank, television channel, or company.
+            Replicate it, then improve on it.
+          </p>
+        </div>
+      </details>
+
+      <p>
+        I found this chart on the Brazilian Government's Transparency Portal website. It gives an overview
+        of how spending is distributed within the Hospital and Outpatient Care sub-area.
+      </p>
+    </div>
+
+      <div class="chart-block">
+        <p class="chart-title">Original:</p>
+        <img src="wk4/wk4_hw_image.png" alt="" width="400px" height="310px">
+      </div>
+
+      <div class="chart-block">
+        <p class="chart-title">My Replication:</p>
+        <figure id="Location8"></figure>
+      </div>
+
+    <div class="chart-block">
+      <p class="chart-title">My Improvement:</p>
+      <figure id="Location8_5"></figure>
+    </div>
+
+    <p> This improved version converts the original pie chart into a bar chart to make comparisons between categories 
+      clearer. It also replaces layered, fixed labels with hover tooltips to reduce clutter and improve readability. 
+      Finally, each category is given a distinct colour from the accessible Okabe–Ito palette to make groups easier to 
+      differentiate. 
+    </p>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC5: Accessing data: Scraper and API</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View API Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Add a chart to your site that uses a live link to an API. Below the chart, add a functional
+            description of the API.
+          </p>
+        </div>
+      </details>
+    </div>
+
+     <details class="task-brief">
+    <summary class="task-summary">
+          Functional Description of API <span class="task-chevron">
+        </summary>
+        <div class="task-content left-text">
+          <p>Base URL:<br> https://api.worldbank.org/v2 <br><br>
+      Endpoint: /country/{country}/indicator/{indicator} <br>
+       • {country_codes} → GBR;JPN;CAN;USA;FRA;DEU;ITA <br>
+       • {indicator_codes} → EN.GHG.CO2.PC.CE.AR5 <br><br>
+      Parameters: <br>
+       • format=json → Specifies the response format as JSON <br>
+       • per_page=455 → Requests 455 results per page <br><br>
+      Complete URL: https://api.worldbank.org/v2/country/GBR;JPN;CAN;USA;FRA;DEU;ITA/indicator/<br>EN.GHG.CO2.PC.CE.AR5?format=json&per_page=455
+      </p>
+    </div>
+    </details>
+
+    <div class="chart-block">
+      <figure id="Location9"></figure>
+    </div>
+
+    <div class="chart-description">
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Scraper Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Using a Google Colab python notebook, scrape a website. Then clean and normalise the data and export
+            into TIDY (long form) format.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <div class="chart-block">
+      <figure id="Location10"></figure>
+    </div>
+
+    <p>Olympic medal table data were scraped from Wikipedia using Requests and BeautifulSoup, then cleaned, 
+      sorted by total medals, and reshaped into long format by medal type. A minor challenge was needing
+      specifying a user-agent to access the page.</p>
+  </section>
+
+   <!-- Section 6 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC6: Loops. Build a Dashboard</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Loops Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Use a loop to batch download six different series as JSON files. Also use a loop in your Javascript in order to embed 
+            the six charts
+          </p>
+        </div>
+      </details>
+
+      <p> To create the dashboard below, I used a JavaScript loop to batch query the UK Police Crime API by crime category and visualised the top
+         five streets by incident count for each offence type.</p>
+
+      <div id="cc6Grid" class="chart-grid">
+          <figure id="Location10_1" class="chart"></figure>
+          <figure id="Location10_2" class="chart"></figure>
+          <figure id="Location10_3" class="chart"></figure>
+          <figure id="Location10_4" class="chart"></figure>
+          <figure id="Location10_5" class="chart"></figure>
+          <figure id="Location10_6" class="chart"></figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC7: Maps. Base maps and choropleths</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Maps Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Produce two maps and embed them in your portfolio page. One map should be of Scotland, the other
+            should be of Wales.
+          </p>
+        </div>
+      </details>
+
+      <div class="maps-row">
+        <div class="map-panel">
+          <p class="chart-title">Coordinates Map:</p>
+          <figure id="Location11"></figure>
         </div>
 
-        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               (Comment)
-            </p>
-    </section>
-
-     <!-- Section 7 -->
-    <section>
-        <div class="chart-description"> 
-
-             <h2>CC7: Maps. Base maps and choropleths</h2>
-            <h3> Produce two maps and embed them in your portfolio page. <br>
-                 One map should be of Scotland, the other should be of Wales.</h3>
-
-            <div class="maps-row">
-                <div class="map-panel">
-                    <p class="chart-title">Coordinates Map:</p>
-                    <figure id="Location11"></figure>
-                </div>
-
-            <div class="map-panel">
-                <p class="chart-title">Choropleth Map:</p>
-                <figure id="Location12"></figure>
-            </div>
-            </div>
-            
+        <div class="map-panel">
+          <p class="chart-title">Choropleth Map:</p>
+          <figure id="Location12"></figure>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Section 8 -->
-    <section>
-        <div class="chart-description">
-            <h2>CC8: Big Data. Extracting a story from millions of prices.</h2>
-            <h3> Produce two charts using either of the two UK prices datasets provided in class. <br>
-                 Explain, in no more than 50 words, what you have done.</h3>
+  <!-- Section 8 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC8: Big Data. Extracting a story from millions of prices.</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Big Data Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Produce two charts using either of the two UK prices datasets provided in class. Explain, in no more
+            than 50 words, what you have done.
+          </p>
         </div>
+      </details>
 
-         <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               (functional description of the API) .......
-            </p>
+      <p>Using the Long Run Prices Database, I selected products based on their description names and alignined them to a common start 
+        and end date to create a consistent time series. Prices were averaged to smooth short-term variation. The first chart 
+        aggregates the average monthly prices of ingredients used to make sangria, showing how the prices of these goods have 
+        evolved alongside inflation over time. The second chart examines average kebab prices over time, disaggregated by UK region
+        to explore regional variation in price levels and dynamics.</p>
+    </div>
 
-        <div class="chart-block">
-            <figure id="Location13"></figure>
+    <div class="chart-block">
+      <figure id="Location13"></figure>
+    </div>
+
+    <div class="chart-block">
+      <figure id="Location14"></figure>
+    </div>
+  </section>
+
+   <!-- Section 9 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC9: Two Interactive Charts.</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Interactive Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Produce two charts that include interactivity. It could be a slider, drop-down box, clickable legend.
+            Or any other form of interactivity that allows the user to better understand your data.
+          </p>
         </div>
+      </details>
+    </div>
 
-        <div class="chart-block">
-            <figure id="Location14"></figure>
+     <p>   
+      Use the slider to see how neglected sites have emerged spatially across Glasgow over the past 40 years.
+      </p>
+
+    <div class="chart-block">
+      <figure id="Location15"></figure>
+    </div>
+
+     <p>   
+      Select a deprivation domain from the drop-down menu to see how median SIMD ranks vary across different distance bands 
+      following the regeneration of a nearby derelict site.
+    </p>
+
+    <div class="chart-block">
+      <figure id="Location16"></figure>
+    </div>
+  </section>
+
+    <!-- Section 10 -->
+  <section class="fade-in-section">
+    <div class="chart-description">
+      <h2>CC10: Advanced Analysis and Machine Learning.</h2>
+
+      <details class="task-brief">
+        <summary class="task-summary">
+          View Advanced Analysis Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Produce a chart that uses more advanced analytics than standard line, bar or scatter charts. 
+            This could include any of: Bubble, histogram of distributions, de-trended (including univariate regression),
+            shock analysis, Diff-in-Diff, heat maps.
+          </p>
         </div>
+      </details>
+    </div>
+
+    <div class="chart-block">
+      <figure id="Location17"></figure>
+    </div>
+
+    <details class="task-brief">
+        <summary class="task-summary">
+          View Machine Learning Task <span class="task-chevron">▼</span>
+        </summary>
+        <div class="task-content">
+          <p>
+            Conduct an applied data analysis using any of the machine learning techniques taught in the Week 10 lecture and seminar.
+            One option is Supervised learning (Regression or Classification); another is the Unsupervised learning (Clustering or Dimensionality reduction) method.
+          </p>
+        </div>
+      </details>
+
+    <p> Hypothesis: A data zone's deprivation profile can predict its distance to the nearest derelict or vacant land site.
+    </p>
+
+    <div class="chart-block">
+      <figure id="Location18"></figure>
+    </div>
+
+     <p> 
+      Interpretation: Deprivation indicators predict distance with weak accuracy (R² ≈ 20%), indicating some predictive power 
+      but still significant unexplained spatial variation.
+     </p>
+  </section>
 
 
-    </section>
+   <!-- Appendix -->
+
+   <section class="fade-in-section">
+    <div class="chart-description">
+    <h1 class="centered-title small"> Appendix </h1>
+      <details class="task-brief">
+        <summary class="task-summary">
+          Colab Notebooks <span class="task-chevron">▼</span>
+        </summary>
+        <div class="centered-title task-content">
+          <p>
+            <a href="https://colab.research.google.com/drive/1fVhWtvrbWvn8WiBPQh6PiuXvdi3WFtpu?usp=sharing" target="_blank"> Maternal Mortality Notebook (CC3)</a> <br>
+            <a href="https://colab.research.google.com/drive/1l5zN7AiAQcL3UUF95Bjyzs3ztwyj6VT7?usp=sharing" target="_blank"> Neonatal Mortality Notebook (CC3)</a> <br>
+            <a href="https://colab.research.google.com/drive/1lp-flzltmlszZuF54xxvJVzfiOOzk6II?usp=sharing" target="_blank"> Olympic Medal Scraper Notebook (CC5)</a> <br>
+            <a href="https://colab.research.google.com/drive/1FE3LNoejnmUvpXZrhOXSNMocob2zIN9n?usp=sharing" target="_blank"> Crimes Loop Notebook (CC6)</a> <br>
+            <a href="https://colab.research.google.com/drive/1wnfQiKsHA0uHVADIUHBbutUyQoKFrDvO?usp=sharing" target="_blank"> Derelict Land in Scotland Notebook (CC7)</a> <br>
+            <a href="https://colab.research.google.com/drive/1BzAnuN_asjYJh3T7PoVa5gkPmsCHGiNZ?usp=sharing" target="_blank"> Sangria Recipe Notebook (CC8)</a> <br>
+            <a href="https://colab.research.google.com/drive/1smW72BW-rs5q56EnItuM8cHu4F4vRfZ2?usp=sharing" target="_blank"> Kebab Prices Notebook (CC8)</a> <br>
+            <a href="https://colab.research.google.com/drive/1S1eNwwP5JUjcfjyGyxxdb5Bl2a5xci0y?usp=sharing" target="_blank"> Derelict Land in Glasgow Notebook (CC9)</a> <br>
+            <a href="https://colab.research.google.com/drive/1d7E1C45p8VXlWvpdK5QoyKEUQNOiy68K?usp=sharing" target="_blank"> SIMD x Distance to Athlete's Village Notebook (CC9)</a> <br>
+            <a href="https://colab.research.google.com/drive/1l0kJgL_ePafEGV4YSGyFGTLVDbX_JKf0?usp=sharing" target="_blank"> Change in Median SIMD Ranks Notebook (CC9)</a> <br>
+            <a href="https://colab.research.google.com/drive/1XjY8Mv9nidhUZCTxbYatAmB5BK5RQaDu?usp=sharing" target="_blank"> Predicting Distance Notebook (CC9)</a>
+          </p>
+        </div>
+      </details>
+    </div>
 
 
+  <!-- Main script: embeds + fade-in activation -->
+  <script>
+    let figure_1_spec = "charts/wk1_agingPopulation.json";
+    let figure_3_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-07-04-tennis-time/visualisation/fig1_strawberry_prices.json";
+
+    let figure_4_spec = "charts/wk2_ethiopia_unemployment.json";
+    let figure_5_spec = "charts/wk2_ethiopia_displacement.json";
+    let figure_6_spec = "charts/wk3_line_matmortality_ethnicity_uk.json";
+    let figure_7_spec = "charts/wk3_bar_neonatal_death_ethnicity_uk.json";
+    let figure_8_spec = "charts/wk4_copy_of_chart_govbr.json";
+    let figure_8_5_spec = "charts/wk4_improvement.json";
+    let figure_9_spec = "charts/wk5_g7_co2e_per_capita.json";
+    let figure_10_spec = "charts/wk5_olympic_medals_top10.json";
+    let figure_11_spec = "charts/wk7_scotland_derelict_and_vacant_land.json";
+    let figure_12_spec = "charts/wk7_choropleth_wales_access_to_services.json";
+    let figure_13_spec = "charts/wk8_sangria_recipe.json";
+    let figure_14_spec = "charts/wk8_kebab_prices.json";
+    let figure_15_spec = "charts/wk9_derelict_land_map_glasgow.json";
+    let figure_16_spec = "charts/wk9_glasgow_simd_2016_vs_2020_distance_to_village.json";
+    let figure_17_spec = "charts/wk10_AL_glasgow_simd_median_ranks_change.json";
+    let figure_18_spec = "charts/wk10_ML_glasgow_predict_distance_to_site.json";
+
+    /* Regular Embeds */
+
+    vegaEmbed('#Location1', figure_1_spec) 
+    vegaEmbed('#Location3', figure_3_spec)
+    vegaEmbed('#Location4', figure_4_spec);
+    vegaEmbed('#Location5', figure_5_spec);
+    vegaEmbed('#Location6', figure_6_spec);
+    vegaEmbed('#Location7', figure_7_spec);
+    vegaEmbed('#Location8', figure_8_spec);
+    vegaEmbed('#Location8_5', figure_8_5_spec);
+    vegaEmbed('#Location9', figure_9_spec);
+    vegaEmbed('#Location10', figure_10_spec);
+    vegaEmbed('#Location11', figure_11_spec);
+    vegaEmbed('#Location12', figure_12_spec);
+    vegaEmbed('#Location13', figure_13_spec);
+    vegaEmbed('#Location14', figure_14_spec);
+    vegaEmbed('#Location15', figure_15_spec);
+    vegaEmbed('#Location16', figure_16_spec);
+    vegaEmbed('#Location17', figure_17_spec);
+    vegaEmbed('#Location18', figure_18_spec);
 
 
+/* Looped Embeds (CC6) */
 
+  // CC6: raw API json files you downloaded
 
+  const cc6Files = [
+    "wk6/data_anti-social-behaviour.json",
+    "wk6/data_violent-crime.json",
+    "wk6/data_bicycle-theft.json",
+    "wk6/data_drugs.json",
+    "wk6/data_burglary.json",
+    "wk6/data_criminal-damage-arson.json"
+  ];
+  
+  const cc6Titles = [
+    "Anti-social behaviour",
+    "Violent crime",
+    "Bicycle theft",
+    "Drugs",
+    "Burglary",
+    "Criminal damage & arson"
+  ];
 
+  // Vega-Lite TEMPLATE for CC6 charts
 
+  const cc6Template = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 240,
+  "height": 220,
 
+  "title": {"text": "", "subtitle": ["", ""]},
 
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+  "data": {"url": ""},
 
+  "transform": [
+    {
+      "calculate": "datum.location && datum.location.street ? datum.location.street.name : 'Unknown street'",
+      "as": "street"
+    },
+    {
+      "aggregate": [{"op": "count", "as": "count"}],
+      "groupby": ["street"]
+    },
+    {
+      "window": [{"op": "row_number", "as": "rn"}],
+      "sort": [{"field": "count", "order": "descending"}]
+    },
+    
+    {"filter": "datum.rn <= 5"}
 
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
+  ],
 
-        let figure_1_spec = "charts/wk1_agingPopulation.json"; // We're storing the URL of the graph we want to display in a variable
+  "mark": {"type": "bar"},
 
-        let figure_3_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-07-04-tennis-time/visualisation/fig1_strawberry_prices.json";
+  "encoding": {
+    "y": {
+      "field": "street",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Incidents"
+    },
+    "tooltip": [
+      {"field": "street", "type": "nominal", "title": "Street"},
+      {"field": "count", "type": "quantitative", "title": "Incidents"}
+    ]
+  },
 
-        let figure_4_spec = "charts/wk2_ethiopia_unemployment.json";
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "title": {
+      "anchor": "middle",
+      "offset": 15,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 16,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 6,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+    }
+  }
+};
 
-        let figure_5_spec = "charts/wk2_ethiopia_displacement.json";
+  // Loop to embed each CC6 chart
 
-        let figure_6_spec = "charts/wk3_line_matmortality_ethnicity_uk.json";
+  for (let i = 0; i < cc6Files.length; i++) {
+  const spec = structuredClone(cc6Template);
+  spec.data.url = cc6Files[i];
 
-        let figure_7_spec = "charts/wk3_bar_neonatal_death_ethnicity_uk.json";
+  spec.title.text = cc6Titles[i];
+  spec.title.subtitle = [
+    "UK Police API (street-level crimes)",
+    "Jan 2024 • lat 52.6297, lng -1.1316"
+  ];
 
-        let figure_8_spec = "charts/wk4_copy_of_chart_govbr.json";
+  vegaEmbed(`#Location10_${i + 1}`, spec, { actions: true });
+}
+    
 
-        let figure_8_5_spec = "charts/wk4_improvement.json"
+    /* Fade-in observer for sections (fade in + fade out) */
+    const fadeSections = document.querySelectorAll('.fade-in-section');
 
-        let figure_9_spec = "charts/wk5_g7_co2e_per_capita.json"
-
-        let figure_10_spec = "charts/wk5_olympic_medals_top10.json"
-
-        let figure_11_spec = "charts/wk7_scotland_derelict_and_vacant_land.json"
-
-        let figure_12_spec = "charts/wk7_choropleth_wales_access_to_services.json"
-
-        let figure_13_spec = "charts/wk8_sangria_recipe.json"
-
-         let figure_14_spec = "charts/wk8_kebab_prices.json"
-
-       // vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-       // vegaEmbed('#Location2', figure_2_spec)
-       // vegaEmbed('#Location3', figure_3_spec)
-        vegaEmbed('#Location4', figure_4_spec)
-        vegaEmbed('#Location5', figure_5_spec)
-        vegaEmbed('#Location6', figure_6_spec)
-        vegaEmbed('#Location7', figure_7_spec)
-        vegaEmbed('#Location8', figure_8_spec)
-        vegaEmbed('#Location8_5', figure_8_5_spec)
-        vegaEmbed('#Location9', figure_9_spec)
-        vegaEmbed('#Location10', figure_10_spec)
-        vegaEmbed('#Location11', figure_11_spec)
-        vegaEmbed('#Location12', figure_12_spec)
-        vegaEmbed('#Location13', figure_13_spec)
-        vegaEmbed('#Location14', figure_14_spec)
-
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
-
-        // define a variable list with all chart files
-
-        let chart_files = [
-            "charts/wk1_agingPopulation.json",
-            "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-05-30-french-exchange/visualisation/fig2_goods-trade.json",
-            "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-07-04-tennis-time/visualisation/fig1_strawberry_prices.json"
-          ];
-                // must be done within the script tags
-        for(let i=0; i<3; i++) {
-            console.log(i)
-
-            console.log(chart_files[i])
-
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
         }
+      });
+    }, { threshold: 0.15 });
 
-        let chart_ids = [
-            "#Location1",
-            "#Location2",
-            "#Location3"
-          ];
-
-          for (let i=0; i<3; i++) {
-            console.log(i)
-
-            console.log(chart_ids[i], chart_files[i])
-
-            vegaEmbed(chart_ids[i], chart_files[i]);
-          }
-
-    </script>
+    fadeSections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
-    
 </html>
