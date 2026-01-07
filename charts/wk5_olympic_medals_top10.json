@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk5/wk5_paris2024_medals_tidy_top10.csv"
+  },
+  "width": 550,
+  "height": 350,
+  "title": {
+    "text": "Top 10 Countries by Total Olympic Medals (Paris 2024)",
+    "subtitle": ["Source: https://en.wikipedia.org/wiki/2024_Summer_Olympics_medal_table"]
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "sum", "field": "Count", "as": "num_medals"}],
+      "groupby": ["Country", "MedalType"]
+    }
+  ],
+  "encoding": {
+    "x": {"field": "Country", "type": "ordinal", "title": "Country"},
+    "y": {"field": "MedalType", "type": "ordinal", "title": "Medal Type"}
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "num_medals",
+          "type": "quantitative",
+          "title": "Number of Medals",
+          "legend": {"direction": "horizontal", "gradientLength": 126}
+        }
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "num_medals", "type": "quantitative"},
+        "color": {
+          "condition": {"test": "datum['num_medals'] < 40", "value": "black"},
+          "value": "white"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 15,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 17,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11, 
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "grid": true, 
+      "tickBand": "extent"
+      }
+    }
+}

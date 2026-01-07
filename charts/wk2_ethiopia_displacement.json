@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ethopia Displacement",
+    "anchor": "start",
+    "subtitle": [
+      "Number Of Internally Displaced Persons",
+      "Source: UNHCR via ECO-API"
+    ],
+    "fontSize": "14",
+    "subtitleFontSize": "12",
+    "color": "#126cd3",
+    "subtitleColor": "#616161"
+  },
+  "height": 350,
+  "width": 400,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": "#ffffff",
+  "view": {"fill": "#ffffff", "strokeOpacity": 0},
+  "data": {
+    "url": "https://api.economicsobservatory.com/eth/displ?vega",
+    "format": {"type": "json"}
+  },
+  "mark": {"type": "bar", "color": "#620392b9", "strokeWidth": "2"},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {"title": "Year", "titleColor": "#126cd3", "grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"title": "Millions", "titleColor": "#126cd3", "grid": false}
+    }
+  },
+  "config": {}
+}

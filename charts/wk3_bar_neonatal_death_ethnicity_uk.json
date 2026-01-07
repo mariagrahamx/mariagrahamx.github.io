@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Bar chart with text labels. Set domain to make the frame cover the labels.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3/wk3_neonatal_mortality_data_2011_2017.csv"
+  },
+  "title": {
+    "text": "Relative Risk Of Neonatal Death by Mothers' Ethnic Group",
+    "subtitle": ["England & Wales, 2011–2017","Source: ONS "]
+  },
+  "height": 350,
+  "width": 550,
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Group_short",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": {
+            "title": "Mother's Ethnic Group",
+            "labelLimit": 0,
+            "titlePadding": 40
+          }
+        },
+        "x": {
+          "field": "Estimate",
+          "type": "quantitative",
+          "axis": {"title": "Relative Risk Of Neonatal Death vs White British "}
+        },
+        "color": {"field": "Group", "type": "nominal", "legend": null}
+      }
+    },
+    {
+      "mark": {"type": "errorbar", "ticks": true},
+      "encoding": {
+        "y": {"field": "Group_short", "type": "nominal"},
+        "x": {
+          "field": "Lower confidence interval",
+          "type": "quantitative",
+          "title": ""
+        },
+        "x2": {"field": "Upper confidence interval"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 15,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 17,
+      "subtitleFontSize": 15,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+    }
+  }
+}

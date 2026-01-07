@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "A simple donut chart with embedded data.",
+  "data": {
+    "values": [
+      {"category": "Contributions", "value": 91.6},
+      {"category": "Other Third Party Services - Legal Entity", "value": 3.1},
+      {"category": "Consumable Material", "value": 2.74},
+      {"category": "Labor Leasing", "value": 1.12},
+      {"category": "Aid", "value": 0.59},
+      {"category": "Others", "value": 0.85}
+    ]
+  },
+  "width": 300,
+  "height": 400,
+  "background": "#FAFAFA",
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 95},
+      "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#DD4477",
+              "#DD5280",
+              "#DF5E89",
+              "#E06D93",
+              "#E1799C",
+              "#E287A5"
+            ]
+          },
+          "legend": {
+            "title": "",
+            "orient": "bottom",
+            "columns": 2,
+            "labelLimit": 1000,
+            "labelColor": "#333333",
+            "labelFontSize": 12,
+            "symbolSize": 160,
+            "symbolType": "circle",
+            "padding": 1
+          },
+          "sort": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {"calculate": "datum.value < 1 ? format(datum.value, '.1f') + '%' : format(datum.value, '.0f') + '%'",
+        "as": "pct_label"}
+      ],
+      "mark": {
+        "type": "text",
+        "radius": 125,
+        "fill": "white",
+        "fontWeight": "normal",
+        "fontSize": 13
+      },
+      "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "text": {"field": "pct_label"},
+        "opacity": {
+          "condition": {"test": "datum.value >= 0.4", "value": 1},
+          "value": 0
+        }
+      }
+    }
+  ],
+  "title": {
+    "text": "SUBAREA: HOSPITAL AND OUTPATIENT CARE",
+    "offset": 10,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "color": "#2B5EB9",
+    "fontSize": 15,
+    "subtitle": "Representation of the 5 that receive the most resources.",
+    "subtitleColor": "#333333",
+    "subtitleFontWeight": "normal",
+    "subtitleFontSize": 13
+  },
+  "config": {"legend": {"direction": "horizontal"}},
+  "padding": {"top": 20, "left": 30, "right": 10, "bottom": 20}
+}

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 550,
+  "height": 350,
+  "title": {
+    "text": "Average Monthly Prices for Making Sangria",
+    "fontWeight": "bolder",
+    "fontSize": 17,
+    "subtitle": ["Source: ONS Microdata via Davies"],
+    "subtitleColor": "#5d5d5d",
+    "subtitleFontSize": 14,
+    "subtitleFontStyle": "italic"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk8/wk8_sangria_recipe.csv"
+  },
+  "params": [
+    {
+      "name": "pick",
+      "select": {"type": "point", "fields": ["item"], "on": "pointerover"},
+      "bind": "legend"
+    }
+  ],
+  "mark": {"type": "area"},
+  "transform": [
+    {
+      "calculate": "indexof(['Lemonade','Brandy','Apples','Sugar','Oranges','Red wine'], datum.item)",
+      "as": "stack_order"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "yearmonth",
+      "axis": {
+        "format": "%Y",
+        "grid": true,
+        "gridOpacity": 0.15,
+        "gridColor": "#766262",
+        "gridWidth": 0.5
+      },
+      "title": "Year"
+    },
+    "y": {
+      "field": "mean price",
+      "type": "quantitative",
+      "stack": "zero",
+      "title": "Average price (£)",
+      "axis": {
+        "grid": true,
+        "gridOpacity": 0.15,
+        "gridColor": "#766262",
+        "gridWidth": 0.5
+      }
+    },
+    "order": {
+      "field": "stack_order",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    "color": {
+      "field": "item",
+      "type": "nominal",
+      "title": "Ingredient",
+      "scale": {
+        "domain": [
+          "Apples",
+          "Brandy",
+          "Lemonade",
+          "Oranges",
+          "Red wine",
+          "Sugar"
+        ],
+        "range": [
+          "#3290b6",   
+          "#148495",   
+          "#047673",
+          "#7bafd3", 
+          "#a2bddb",
+          "#559fc8"
+        ]
+      },
+      "legend": {
+        "values": [
+          "Red wine",
+          "Oranges",
+          "Sugar",
+          "Apples",
+          "Brandy",
+          "Lemonade"
+        ]
+      }
+    },
+    "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.6},
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "yearmonth",
+        "title": "Month-Year"
+      },
+      {"field": "item", "type": "nominal", "title": "Ingredient"},
+      {
+        "field": "mean price",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Average Price (£)"
+      }
+    ]
+  },
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 15,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 20,
+      "subtitleFontSize": 16,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11, 
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+      }
+    }
+}  

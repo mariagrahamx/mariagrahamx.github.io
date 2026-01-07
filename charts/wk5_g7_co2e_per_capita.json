@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/GBR;JPN;CAN;USA;FRA;DEU;ITA/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=455",
+    "format": {"property": "1"}
+  },
+
+  "width": 550,
+  "height": 350,
+  "transform": [{"filter": "toNumber(datum.date) >= 1970"}],
+
+  "mark": "line",
+  "title": {
+    "text": "Carbon Dioxide (CO2) Emissions: G7 Countries",
+    "subtitle": ["Total CO2 Emissions Per Capita", "Source: World Bank"]
+  },
+  
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Total CO2e/Capita"
+    },
+    "color": {
+      "field": "country.value",
+      "type": "nominal",
+      "legend": {"title": "Country"},
+      "scale": {"scheme": "observable10"}
+    }
+  },
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 15,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 17,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11, 
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+      }
+    }
+}

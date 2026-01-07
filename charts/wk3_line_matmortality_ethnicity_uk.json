@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk3/wk3_maternal_mortality_data_2009_2023.csv"
+  },
+  "title": {
+    "text": "Trends In Maternal Mortality By Ethnic Group",
+    "subtitle": ["United Kingdom, 2009-2023","Source: MBRRACE-UK, NPEU"]
+  },
+  "height": 350,
+  "width": 550,
+  "transform": [{"filter": "isValid(datum.Rate)"}],
+  "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
+  "encoding": {
+    "x": {
+      "field": "Mid-Year",
+      "type": "quantitative",
+      "title": "Mid-Year Of Rolling Period",
+      "axis": {"format": "d"}
+    },
+    "y": {
+      "field": "Rate",
+      "type": "quantitative",
+      "title": "Maternal Deaths Per 100,000"
+    },
+    "color": {"field": "Ethnicity", "type": "nominal", "title": "Ethnicity"}
+  },
+
+   "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 15,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 17,
+      "subtitleFontSize": 15,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11, 
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+      }
+    }
+}

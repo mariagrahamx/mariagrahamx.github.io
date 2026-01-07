@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map showing Welsh Local Authority District boundaries using 2025 administrative boundaries.",
+  "title": {
+    "text": "Access to Services Deprivation in Wales",
+    "subtitle": [
+      "Shows count of LSOAs in each region ranked among the most deprived 20%",
+      "Source: ONS & StatsWales",
+      "Distribution by Local Authority (2025)"
+    ]
+  },
+  "width": 350,
+  "height": 550,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhellingsdata/RADataHub/refs/heads/main/MappingWorkshop/geo_data/LAD_WLS_2025_05.topojson",
+    "format": {"type": "topojson", "feature": "object_name"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.LAD25CD",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/wk7/wk7_wales_access_to_services_LAD.csv"
+        },
+        "key": "Area code",
+        "fields": ["Data values", "Area name"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "Data values",
+      "type": "quantitative",
+      "scale": {"scheme": "purpleblue"},
+      "title": "No. of LSOAs"
+    },
+    "tooltip": [
+      {
+        "field": "Area name",
+        "type": "nominal",
+        "title": "Local Authority District"
+      },
+      {"field": "Data values", "type": "quantitative", "title": "No. of LSOAs"}
+    ]
+  },
+  "projection": {"type": "mercator"},
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#fdfdfd",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 20,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 17
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 25,
+      "subtitleFontSize": 20,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11, 
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+      }
+    }
+}
