@@ -1,0 +1,174 @@
+{
+  "data": {"name": "data-a3e27b421486b5e52de5d53e6991017e"},
+  "mark": {"type": "bar"},
+  "background": "#EFEFF6",
+  "config": {"font": "Montserrat, sans-serif"},
+  "encoding": {
+    "color": {
+      "condition": {"test": "datum.is_glasgow", "value": "#d62728"},
+      "value": "#1f77b4"
+    },
+    "tooltip": [
+      {
+        "field": "Local_Authority",
+        "title": "Local Authority",
+        "type": "nominal"
+      },
+      {
+        "field": "pct_pop_deciles_1_3_overall",
+        "format": ".1f",
+        "title": "% in most deprived deciles",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "axis": {
+        "labelColor": "#616373",
+        "labelFontSize": 11,
+        "titleColor": "#1f1b5e",
+        "titleFontSize": 12
+      },
+      "field": "pct_pop_deciles_1_3_overall",
+      "title": "% of population in SIMD deciles 1–3",
+      "type": "quantitative"
+    },
+    "y": {
+      "axis": {
+        "labelColor": "#616373",
+        "labelFontSize": 11,
+        "titleColor": "#1f1b5e",
+        "titleFontSize": 12
+      },
+      "field": "Local_Authority",
+      "sort": {"field": "pct_pop_deciles_1_3_overall", "order": "descending"},
+      "title": "Local Authority",
+      "type": "nominal"
+    }
+  },
+  "height": 350,
+  "title": {
+    "text": "Scottish Local Authorities with the Highest Share of Residents Living in Deprived Areas (SIMD 2020)",
+    "anchor": "middle",
+    "color": "#1f1b5e",
+    "font": "Montserrat-Bold, sans-serif",
+    "fontSize": 16,
+    "offset": 15,
+    "subtitle": ["Lower SIMD decile ranks correspond to higher levels of deprivation",
+      "Source: datamap-scotland.co.uk (SIMD 2020)"],
+    "subtitleColor": "#616373",
+    "subtitleFontSize": 14,
+    "subtitleFontStyle": "italic",
+    "subtitlePadding": 6
+  },
+  "width": 550,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-a3e27b421486b5e52de5d53e6991017e": [
+      {
+        "Local_Authority": "West Dunbartonshire",
+        "pct_pop_deciles_1_3_overall": 55.95692445039616,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/west-dunbartonshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/west-dunbartonshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Glasgow City",
+        "pct_pop_deciles_1_3_overall": 54.91320730411259,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/glasgow-city-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/glasgow-city-population-summary-by-measure.csv",
+        "is_glasgow": true
+      },
+      {
+        "Local_Authority": "North Ayrshire",
+        "pct_pop_deciles_1_3_overall": 51.88452757935047,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/north-ayrshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/north-ayrshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Inverclyde",
+        "pct_pop_deciles_1_3_overall": 50.651345860843065,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/inverclyde-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/inverclyde-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Dundee City",
+        "pct_pop_deciles_1_3_overall": 50.223925761549324,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/dundee-city-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/dundee-city-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "North Lanarkshire",
+        "pct_pop_deciles_1_3_overall": 46.850805977173785,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/north-lanarkshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/north-lanarkshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "East Ayrshire",
+        "pct_pop_deciles_1_3_overall": 42.71855010660981,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/east-ayrshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/east-ayrshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Clackmannanshire",
+        "pct_pop_deciles_1_3_overall": 40.30126336248785,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/clackmannanshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/clackmannanshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Renfrewshire",
+        "pct_pop_deciles_1_3_overall": 34.1491828309676,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/renfrewshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/renfrewshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "South Lanarkshire",
+        "pct_pop_deciles_1_3_overall": 32.9493666907628,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/south-lanarkshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/south-lanarkshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "West Lothian",
+        "pct_pop_deciles_1_3_overall": 31.011527218575917,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/west-lothian-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/west-lothian-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Fife",
+        "pct_pop_deciles_1_3_overall": 29.50755230069196,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/fife-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/fife-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Falkirk",
+        "pct_pop_deciles_1_3_overall": 27.106725785299446,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/falkirk-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/falkirk-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "Midlothian",
+        "pct_pop_deciles_1_3_overall": 26.516816516816515,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/midlothian-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/midlothian-population-summary-by-measure.csv",
+        "is_glasgow": false
+      },
+      {
+        "Local_Authority": "South Ayrshire",
+        "pct_pop_deciles_1_3_overall": 23.657259495917643,
+        "page_url": "https://datamap-scotland.co.uk/simd-local-authorities/south-ayrshire-social-deprivation/",
+        "csv_url": "https://www.datamap-scotland.co.uk/wp-wag-2025/SIMD2020/files/south-ayrshire-population-summary-by-measure.csv",
+        "is_glasgow": false
+      }
+    ]
+  }
+}

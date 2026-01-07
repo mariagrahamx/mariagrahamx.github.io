@@ -1,0 +1,107 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Derelict and Vacant Land Sites Across Glasgow Since 1980",
+    "anchor": "start",
+    "subtitle": ["Spatial distribution of sites by year first recorded as derelict or vacant", "Source: Scottish Vacant and Derelict Land Survey (SVLDS) Site Register"]
+  },
+  "width": 400,
+  "height": 500,
+  "params": [
+    {
+      "name": "startYear",
+      "value": 1980,
+      "bind": {
+        "input": "range",
+        "min": 1980,
+        "max": 2023,
+        "step": 1,
+        "name": "Start Year:"
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/project/glasgow_datazones.json",
+        "format": {"type": "topojson", "feature": "S12000046"}
+      },
+      "projection": {"type": "mercator"},
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/project/glasgow_derelict_sites_clean.csv"
+      },
+      "transform": [
+        {"calculate": "toNumber(datum['Start Year'])", "as": "start_year"},
+        {"filter": "datum.start_year <= startYear"}
+      ],
+      "projection": {"type": "mercator"},
+      "mark": {
+        "type": "circle",
+        "opacity": 0.7,
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "color": {
+          "field": "Site Type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Derelict", "Vacant Land", "Vacant Land and Buildings"],
+            "range": ["#1B9E77", "#D95F02", "#7570B3"]
+          },
+          "legend": {"title": "Site Type", "symbolSize": 500}
+        },
+        "size": {
+          "field": "Site Size",
+          "type": "quantitative",
+          "scale": {"type": "sqrt", "range": [15, 400]},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Site Type", "type": "nominal", "title": "Type"},
+          {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+          {"field": "Site Size", "type": "quantitative", "title": "Size (ha)"}
+        ]
+      }
+    }
+  ],
+   "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#EFEFF6",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 14,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 16,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11, 
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+      }
+    }
+}

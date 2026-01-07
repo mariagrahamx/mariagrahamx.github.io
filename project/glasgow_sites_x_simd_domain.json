@@ -1,0 +1,312 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/main/project/glasgow_simd_2020_distance_wide.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {
+    "text": "SIMD Domain Ranks and Distance to Derelict or Vacant Sites Across Glasgow Data Zones",
+    "subtitle": [
+      "Lower SIMD ranks correspond to higher levels of deprivation",
+      "Source: Scottish Index of Multiple Deprivation (SIMD) 2020"
+    ]
+  },
+  "params": [
+    {
+      "name": "zoom",
+      "select": {
+        "type": "interval",
+        "zoom": "wheel!",
+        "translate": "[pointerdown, pointerup] > pointermove!"
+      },
+      "bind": "scales"
+    }
+  ],
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "title": "Income Domain",
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "opacity": 0.65,
+            "size": 35
+          },
+          "width": 260,
+          "height": 210,
+          "encoding": {
+            "x": {
+              "field": "dist_km",
+              "type": "quantitative",
+              "title": "Distance to nearest site (km)",
+              "scale": {"domain": [0, 1.2]}
+            },
+            "y": {
+              "field": "Income_Domain_Rank",
+              "type": "quantitative",
+              "title": "SIMD Rank",
+              "scale": {"domain": [0, 7100]}
+            },
+            "color": {"value": "#1f77b4"},
+            "tooltip": [
+              {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Income_Domain_Rank",
+                "type": "quantitative",
+                "title": "Income Rank"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Employment Domain",
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "opacity": 0.65,
+            "size": 35
+          },
+          "width": 260,
+          "height": 210,
+          "encoding": {
+            "x": {
+              "field": "dist_km",
+              "type": "quantitative",
+              "title": "Distance to nearest site (km)",
+              "scale": {"domain": [0, 1.2]}
+            },
+            "y": {
+              "field": "Employment_Domain_Rank",
+              "type": "quantitative",
+              "title": "SIMD Rank",
+              "scale": {"domain": [0, 7100]}
+            },
+            "color": {"value": "#ff7f0e"},
+            "tooltip": [
+              {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Employment_Domain_Rank",
+                "type": "quantitative",
+                "title": "Employment Rank"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "title": "Education Domain",
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "opacity": 0.65,
+            "size": 35
+          },
+          "width": 260,
+          "height": 210,
+          "encoding": {
+            "x": {
+              "field": "dist_km",
+              "type": "quantitative",
+              "title": "Distance to nearest site (km)",
+              "scale": {"domain": [0, 1.2]}
+            },
+            "y": {
+              "field": "Education_Domain_Rank",
+              "type": "quantitative",
+              "title": "SIMD Rank",
+              "scale": {"domain": [0, 7100]}
+            },
+            "color": {"value": "#2ca02c"},
+            "tooltip": [
+              {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Education_Domain_Rank",
+                "type": "quantitative",
+                "title": "Education Rank"
+              },
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Education_Domain_Rank",
+                "type": "quantitative",
+                "title": "Education Rank"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Health Domain",
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "opacity": 0.65,
+            "size": 35
+          },
+          "width": 260,
+          "height": 210,
+          "encoding": {
+            "x": {
+              "field": "dist_km",
+              "type": "quantitative",
+              "title": "Distance to nearest site (km)",
+              "scale": {"domain": [0, 1.2]}
+            },
+            "y": {
+              "field": "Health_Domain_Rank",
+              "type": "quantitative",
+              "title": "SIMD Rank",
+              "scale": {"domain": [0, 7100]}
+            },
+            "color": {"value": "#9467bd"},
+            "tooltip": [
+              {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Health_Domain_Rank",
+                "type": "quantitative",
+                "title": "Health Rank"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "title": "Crime Domain",
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "opacity": 0.65,
+            "size": 35
+          },
+          "width": 260,
+          "height": 210,
+          "encoding": {
+            "x": {
+              "field": "dist_km",
+              "type": "quantitative",
+              "title": "Distance to nearest site (km)",
+              "scale": {"domain": [0, 1.2]}
+            },
+            "y": {
+              "field": "Crime_Domain_Rank",
+              "type": "quantitative",
+              "title": "SIMD Rank",
+              "scale": {"domain": [0, 7100]}
+            },
+            "color": {"value": "#d62728"},
+            "tooltip": [
+              {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Crime_Domain_Rank",
+                "type": "quantitative",
+                "title": "Crime Rank"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Access to Services Domain",
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "opacity": 0.65,
+            "size": 35
+          },
+          "width": 260,
+          "height": 210,
+          "encoding": {
+            "x": {
+              "field": "dist_km",
+              "type": "quantitative",
+              "title": "Distance to nearest site (km)",
+              "scale": {"domain": [0, 1.2]}
+            },
+            "y": {
+              "field": "Access_Domain_Rank",
+              "type": "quantitative",
+              "title": "SIMD Rank",
+              "scale": {"domain": [0, 7100]}
+            },
+            "color": {"value": "#7f3b2e"},
+            "tooltip": [
+              {"field": "Datazone", "type": "nominal", "title": "Data Zone"},
+              {
+                "field": "dist_km",
+                "type": "quantitative",
+                "format": ".2f",
+                "title": "Distance (km)"
+              },
+              {
+                "field": "Access_Domain_Rank",
+                "type": "quantitative",
+                "title": "Access Rank"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#EFEFF6",
+    "title": {
+      "anchor": "middle",
+      "offset": 15,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 16,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+    }
+  }
+}

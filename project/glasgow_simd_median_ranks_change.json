@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/project/advanced_analysis_simd_glasgow.csv"
+  },
+  "title": {
+    "text": "Change in Median SIMD Ranks by Domain and Distance Band (2016 to 2020)",
+    "subtitle": [
+      "Values show 2020 minus 2016 median rank (positive indicates improvement)",
+      "Source: Scottish Index of Multiple Deprivation (SIMD) 2016 and 2020"
+    ]
+  },
+  "width": 520,
+  "height": 260,
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "village_band",
+      "type": "nominal",
+      "title": "Distance band",
+      "sort": ["<1km", "1–3km", "3–5km", "5–8km", ">8km"]
+    },
+    "y": {
+      "field": "domain",
+      "type": "nominal",
+      "title": "SIMD domain",
+      "sort": [
+        "Income_Domain_Rank",
+        "Employment_Domain_Rank",
+        "Education_Domain_Rank",
+        "Health_Domain_Rank",
+        "Crime_Domain_Rank",
+        "Access_Domain_Rank"
+      ],
+      "axis": {
+        "labelExpr": "replace(replace(datum.label, '_Domain_Rank', ''), '_', ' ')"
+      }
+    },
+    "color": {
+      "field": "delta_median_rank",
+      "type": "quantitative",
+      "title": "SIMD Rank Change"
+    },
+    "tooltip": [
+      {"field": "domain", "type": "nominal", "title": "Domain"},
+      {"field": "village_band", "type": "nominal", "title": "Band"},
+      {
+        "field": "delta_median_rank",
+        "type": "quantitative",
+        "title": "Change in SIMD Rank",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#EFEFF6",
+    "legend": {
+      "titleFont": "Montserrat, sans-serif",
+      "titleFontSize": 14,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373",
+      "labelFontSize": 13
+    },
+    "title": {
+      "anchor": "middle",
+      "offset": 20,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 16,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 5,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+    }
+  }
+}

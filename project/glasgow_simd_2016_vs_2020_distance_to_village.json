@@ -1,0 +1,176 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mariagrahamx/mariagrahamx.github.io/refs/heads/main/project/glasgow_simd_2016_vs_2020_x_distance_to_village.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {
+    "text": "SIMD Domain Rank by Data Zone's Distance to Athlete's Village (Glasgow)",
+    "subtitle": [
+      "Lower SIMD ranks correspond to higher levels of deprivation",
+      "Source: Scottish Index of Multiple Deprivation (SIMD) 2020"
+    ]
+  },
+  "params": [
+    {
+      "name": "domain_select",
+      "value": "Income_Domain_Rank",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Income_Domain_Rank",
+          "Employment_Domain_Rank",
+          "Education_Domain_Rank",
+          "Health_Domain_Rank",
+          "Crime_Domain_Rank",
+          "Access_Domain_Rank"
+        ],
+        "labels": [
+          "Income",
+          "Employment",
+          "Education",
+          "Health",
+          "Crime",
+          "Access to Services"
+        ],
+        "name": "Choose a Domain: "
+      }
+    }
+  ],
+  "transform": [
+    {"calculate": "toNumber(datum['year'])", "as": "yr"},
+    {"calculate": "toNumber(datum['median_rank'])", "as": "med_rank"},
+    {
+      "calculate": "replace(datum['village_band'], /^\\s+|\\s+$/g, '')",
+      "as": "band"
+    },
+    {"calculate": "replace(datum['domain'], /^\\s+|\\s+$/g, '')", "as": "dom"},
+    {
+      "calculate": "datum.band === '<1km' ? 1 : datum.band === '1–3km' ? 2 : datum.band === '3–5km' ? 3 : datum.band === '5–8km' ? 4 : datum.band === '>8km' ? 5 : 99",
+      "as": "band_order"
+    }
+  ],
+  "resolve": {"scale": {"y": "shared"}},
+  "hconcat": [
+    {
+      "title": "Year: 2016",
+      "width": 250,
+      "transform": [
+        {"filter": "datum.yr === 2016"},
+        {"filter": "datum.dom === domain_select"}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "band",
+          "type": "nominal",
+          "title": "Distance band (km)",
+          "sort": {"field": "band_order", "order": "ascending"}
+        },
+        "y": {
+          "field": "med_rank",
+          "type": "quantitative",
+          "title": "Median Rank"
+        },
+        "color": {
+          "field": "dom",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Income_Domain_Rank",
+              "Employment_Domain_Rank",
+              "Education_Domain_Rank",
+              "Health_Domain_Rank",
+              "Crime_Domain_Rank",
+              "Access_Domain_Rank"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#2ca02c",
+              "#9467bd",
+              "#d62728",
+              "#7f3b2e"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "band", "type": "nominal", "title": "Distance band"},
+          {"field": "med_rank", "type": "quantitative", "title": "Median Rank"}
+        ]
+      }
+    },
+    {
+      "title": "Year: 2020",
+      "width": 250,
+      "transform": [
+        {"filter": "datum.yr === 2020"},
+        {"filter": "datum.dom === domain_select"}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "band",
+          "type": "nominal",
+          "title": "Distance band (km)",
+          "sort": {"field": "band_order", "order": "ascending"}
+        },
+        "y": {
+          "field": "med_rank",
+          "type": "quantitative",
+          "title": "Median rank"
+        },
+        "color": {
+          "field": "dom",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Income_Domain_Rank",
+              "Employment_Domain_Rank",
+              "Education_Domain_Rank",
+              "Health_Domain_Rank",
+              "Crime_Domain_Rank",
+              "Access_Domain_Rank"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#2ca02c",
+              "#9467bd",
+              "#d62728",
+              "#7f3b2e"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "band", "type": "nominal", "title": "Distance Band"},
+          {"field": "med_rank", "type": "quantitative", "title": "Median rank"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Montserrat, sans-serif",
+    "view": {"stroke": "transparent"},
+    "background": "#EFEFF6",
+    "title": {
+      "anchor": "middle",
+      "offset": 15,
+      "font": "Montserrat-Bold, sans-serif",
+      "color": "#1f1b5e",
+      "fontSize": 16,
+      "subtitleFontSize": 14,
+      "subtitleColor": "#616373",
+      "subtitlePadding": 6,
+      "subtitleFontStyle": "italic"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleColor": "#1f1b5e",
+      "labelColor": "#616373"
+    }
+  }
+}
