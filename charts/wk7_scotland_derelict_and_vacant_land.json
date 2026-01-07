@@ -7,8 +7,8 @@
       "Distribution by Local Planning Authority (2023)"
     ]
   },
-  "width": 450,
-  "height": 550,
+  "width": 500,
+  "height": 500,
   "layer": [
     {
       "data": {
@@ -70,18 +70,19 @@
     "background": "#fdfdfd",
     "legend": {
       "titleFont": "Montserrat, sans-serif",
-      "titleFontSize": 20,
+      "titleFontSize": 14,
       "titleColor": "#1f1b5e",
       "labelColor": "#616373",
-      "labelFontSize": 17
+      "labelFontSize": 12,
+      "labelLimit": 300 
     },
     "title": {
       "anchor": "middle",
-      "offset": 20,
+      "offset": 0,
       "font": "Montserrat-Bold, sans-serif",
       "color": "#1f1b5e",
-      "fontSize": 25,
-      "subtitleFontSize": 18,
+      "fontSize": 16,
+      "subtitleFontSize": 14,
       "subtitleColor": "#616373",
       "subtitlePadding": 5,
       "subtitleFontStyle": "italic"

@@ -395,6 +395,7 @@ section.project-section {
   position: relative;
 }
 
+
 .vega-actions {
   position: absolute !important;
   top: 10px !important;
@@ -403,6 +404,7 @@ section.project-section {
   padding: 0 !important;
   z-index: 5;
 }
+
 
 /* Responsive layout: stack when the page is narrow */
 @media (max-width: 900px) {
