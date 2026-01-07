@@ -275,13 +275,13 @@
   <p> Glasgow is one of Scotland’s most deprived cities, with a high concentration of derelict and vacant land rooted in its 
     industrial history. While deprivation and the presence of such sites frequently coincide, proximity alone does not fully 
     explain Glasgow’s high deprivation levels, as reflected in the weak predictive power of the supervised learning model 
-    (R² = 20.2%).
-
-<br><br>
-Analysis of the Athletes’ Village regeneration project shows no clear short-term trend in the deprivation outcomes of surrounding areas, 
-though it must be noted that socioeconomic change often unfolds over longer time horizons than those observed here. Overall, 
-the findings point to a complex relationship between land use and deprivation, suggesting that effective policy responses 
-require more nuanced, context-specific interventions beyond regeneration alone.
+    (R² = 20.2%).<br><br>
+    Analysis of the Athletes’ Village regeneration project reveals no clear short-term improvement in deprivation outcomes in surrounding areas. 
+    However, socioeconomic change often unfolds over longer time horizons than those observed here, and these findings should not be interpreted as 
+    representative of all regeneration or repurposing projects. <br><br>
+    Overall, the results suggest that deprivation levels are shaped by a range of interacting factors beyond simple proximity to regenerated sites. 
+    As such, when seeking to improve economic and social outcomes through regeneration initiatives, policymakers should combine physical redevelopment 
+    with nuanced, context-specific interventions to ensure that benefits are effectively targeted and sustained.
   </p>
 
 </section>
@@ -297,9 +297,50 @@ require more nuanced, context-specific interventions beyond regeneration alone.
           Challenges <span class="task-chevron">▼</span>
         </summary>
         <div class="centered-title task-content">
+          <p class="bolder">
+            Challenge 1: Data availability and access 
+          </p> <br>
           <p>
-            
+            One of the main challenges I faced when conducting this project was data availability. Relevant datasets were often difficult to find in the 
+            first place: files were inconsistently named, and links to datasets would frequently redirect to error pages. In one case, a government website 
+            hosting a dataset I was working with crashed in December, which meant I had to source new data midway through completing the project. <br><br>
           </p>
+
+          <p class="bolder">
+
+            Challenge 2: Defining the Central Belt spatially
+          </p> <br>
+
+          <p> 
+            When trying to highlight the Central Belt region of Scotland in Chart 1, I could not find any standard or official GeoJSON definition of the 
+            Central Belt. As a result, I created the highlighted boundary manually by combining planning authorities commonly identified as part of the 
+            Central Belt, based on publicly available regional maps. This boundary should therefore be viewed as an approximate representation rather than a 
+            precise regional definition. <br><br>
+          </p>
+
+          <p class = "bolder">
+          Challenge 3: Access to derelict and vacant land data <br>
+          </p>
+
+          <p> The derelict and vacant land site data used in this project come from the Scottish Vacant and Derelict Land Survey and were cleaned and processed 
+            in Python. I filled out the relevant form to request access to the dataset's API, but unfortunately received no response. My analysis therefore 
+            relies on a downloadable CSV file of the 2024 site register. If this project were to be reproduced in the future, newly recorded sites uploaded 
+            after this date would need to be added manually in order to reflect the most up-to-date data. <br><br>
+          </p>
+
+          <p class = "bolder">
+          Challenge 4: Changes in Data Zone geographies over time <br>
+          </p>
+          
+          <p>
+          Another major challenge was the change in Data Zone geographies between SIMD releases. SIMD indicators from 2004 to 2012 use Data Zones based on the 
+          2001 Census, whereas SIMD 2016 and 2020 use Data Zones based on the 2011 Census. Similarly, the TopoJSON file used to map Glasgow’s Data Zones corresponds
+          to the 2011 geography. Although both the SIMD indicators and the boundary files refer to “Data Zones", the fact that they originate from different census 
+          years means that they use non-overlapping Data Zone codes and could not be directly joined. I looked extensively for a Glasgow TopoJSON file using 2001 
+          Data Zone boundaries, as I had initially hoped to conduct a complete time series spatial analysis from 2004 to 2020, but I was unable to find one nor any clear 
+          guidance on how to map Data Zones across different census geographies.
+          </p>
+          
         </div>
       </details>
 
@@ -311,6 +352,7 @@ require more nuanced, context-specific interventions beyond regeneration alone.
           <p>
             <a href="https://geoportal.statistics.gov.uk/datasets/a927ee99adb34f6a943e447a193a0d5b_0/explore" target="_blank"> UK Local Planning Authorities Boundaries (2023)</a> <br>
             <a href="https://www.publiccontractsscotland.gov.uk/Maps/LocalAuthorityRegions.aspx" target="_blank"> Local Authorities in Scotland's Central Belt</a> <br>
+            <a href="https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/" target="_blank"> Scottish Vacant and Derelict Land Survey - Site Register (2024)</a><br>
             <a href="https://martinjc.github.io/UK-GeoJSON/" target="_blank"> Glasgow City Data Zones (2011 Boundaries)</a> <br>
             <a href="https://datamap-scotland.co.uk/simd-local-authorities/" target="_blank"> Scottish Local Authorities Social Deprivation (2020)</a> <br>
             <a href="https://simd.scot/#/simd2020/BTTTFTT/9/-4.0000/55.9000/" target="_blank"> Scottish Index Of Multiple Deprivation (2020)</a> <br>
@@ -348,7 +390,7 @@ require more nuanced, context-specific interventions beyond regeneration alone.
 
   <div class="academic-integrity-content">
     <p>
-      I utilised Generative AI tools to aid in troubleshooting and assist with CSS styling.
+      Generative AI tools were used to aid in troubleshooting and assist with CSS styling.
       All analysis, interpretation, and conclusions are my own.
     </p>
   </div>
