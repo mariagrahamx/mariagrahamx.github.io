@@ -320,7 +320,7 @@
 
           <p class = "bolder">
           Challenge 3: Access to derelict and vacant land data <br>
-          </p>
+          </p> <br>
 
           <p> The derelict and vacant land site data used in this project come from the Scottish Vacant and Derelict Land Survey and were cleaned and processed 
             in Python. I filled out the relevant form to request access to the dataset's API, but unfortunately received no response. My analysis therefore 
@@ -330,12 +330,12 @@
 
           <p class = "bolder">
           Challenge 4: Changes in Data Zone geographies over time <br>
-          </p>
+          </p> <br>
           
           <p>
           Another major challenge was the change in Data Zone geographies between SIMD releases. SIMD indicators from 2004 to 2012 use Data Zones based on the 
           2001 Census, whereas SIMD 2016 and 2020 use Data Zones based on the 2011 Census. Similarly, the TopoJSON file used to map Glasgow’s Data Zones corresponds
-          to the 2011 geography. Although both the SIMD indicators and the boundary files refer to “Data Zones", the fact that they originate from different census 
+          to the 2011 geography. Although both the SIMD indicators and the boundary files refer to "Data Zones", the fact that they originate from different census 
           years means that they use non-overlapping Data Zone codes and could not be directly joined. I looked extensively for a Glasgow TopoJSON file using 2001 
           Data Zone boundaries, as I had initially hoped to conduct a complete time series spatial analysis from 2004 to 2020, but I was unable to find one nor any clear 
           guidance on how to map Data Zones across different census geographies.
